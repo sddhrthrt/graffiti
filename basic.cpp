@@ -27,14 +27,23 @@ void display(void){
 		
 		glLoadIdentity();
 		glTranslatef(0.0f, 0.0f, -6.0f);
-		Point p1 (0.0f, 0.0f);
+		Point p1 (-1.0f, 0.0f);
 		Point p2 (0.0f, 1.0f);
-		Point p3 (1.0f, 1.0f);
-		Point p4 (1.0f, 0.0f);
+		Point p3 (1.0f, 0.0f);
+		Point p4 (1.0f, -1.0f);
+		Point p5 (-1.0f, -1.0f);
+		Line l1 (p1, p2);
+		Line l2 (p2, p3);
+		Line l3 (p3, p4);
+		Line l4 (p4, p5);
+		Line l5 (p5, p1);
 		Color c (1.0f, 0.0f, 0.0f);
-		Quadrangle q (p1, p2, 0, c, c);
 		glBegin(GL_POINTS);
-		q.draw();
+			l1.draw();
+			l2.draw();
+			l3.draw();
+			l4.draw();
+			l5.draw();
 		glEnd();
 		glutSwapBuffers();
 }

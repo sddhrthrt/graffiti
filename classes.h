@@ -34,6 +34,11 @@ class Point{
 		float* getCoords(){
 			return coords;
 		}
+		void setCoords(float x, float y, float z){
+			coords[0]=x;
+			coords[1]=y;
+			coords[2]=z;
+		}
 		Point() {};
 		Point(float x, float y, float z){
 			coords[0]=x;
@@ -60,15 +65,12 @@ class Point{
 		};
 		void draw(){
 			color.set();
-			glBegin(GL_POINTS);
-			glVertex3f(coords[0]/(float)unit, coords[1]/(float)unit, coords[2]/(float)unit);
-			glEnd();
+			glVertex3f(coords[0], coords[1], coords[2]);
 		}
 };
 class Operations{
 	public:
 	static void bresenham(Point a, Point b){
-		glBegin(GL_POINTS);
 		float x0=a.getCoords()[0];
 		float y0=a.getCoords()[1];
 		float x1=b.getCoords()[0];
@@ -112,7 +114,6 @@ class Operations{
 				p=p+tdyminustdx;
 			}
 		}
-		glEnd();
 	}
 };
 class Line{
