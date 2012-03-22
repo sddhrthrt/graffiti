@@ -1,14 +1,23 @@
-
+/*! \file classes.h
+ * Has definitions of all the classes that are used in the code.
+ * The classes currently implemented are: Color, Point, Line, Quadrangle. 
+ */
+/// Color
+/// A class that has an array of size three, holding the r, g, b details of the Color object. 
+/// 
 class Color{
 	public:
 		float rgb[3];
+		/// Constructor for Color - only one with three arguments. Floats, <=1.0
 		Color(float r, float g, float b){
 			rgb[0]=r;
 			rgb[1]=g;
 			rgb[2]=b;
 		};
+		/// Constructor - initializes color to white
 		Color(){rgb[0]=1.0f; rgb[1]=1.0f; rgb[2]=1.0f;};
-		float get(char color){
+		/// A function that returns the color value of the object, by channel. Arguments are 'r', 'g', 'b'.
+		float get(char color){ 
 			switch(color){
 				case 'r':
 					return rgb[0];
@@ -21,55 +30,71 @@ class Color{
 					break;
 			}
 		}
-		void set(){
+		/// Calls glColor3f(rgb[0],rgb[1],rgb[2]);
+		void set(){ 
 			glColor3f(rgb[0],rgb[1],rgb[2]);
 		}
 };
-
+/*! \class Point
+ * Stores the 3 dimensional coordinates and the color of the particular point.
+ */
 class Point{
 	
 	public:
 		float coords[3];
 		Color color;
+		/// returns the 3 element float array which contains x, y, z coordinate of the Point
 		float* getCoords(){
 			return coords;
 		}
+		/// call it with three arguments to set the coordinates of a point.
 		void setCoords(float x, float y, float z){
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=z;
 		}
 		Point() {};
+		/// Constructor with only coordinates, Color defaults to white
 		Point(float x, float y, float z){
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=z;
 			Color color (1.0f, 1.0f, 1.0f);
 		};
+		/// Constructor with only 2 coordinates and no color, z and color default to 0 and white respectively
 		Point(float x, float y){
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=0.0f;
 			Color color(1.0f, 1.0f, 1.0f);
 		};
+		/// Constructor with 3 Coordinates and Color.
 		Point(float x, float y, float z, Color c){
 			color=c;
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=z;
 		};
-		Point(float x, float y, Color c):color(c){
+		/// Construcotor with 2 coordinates and a color. z defaults to 0 again.
+		Point(float x, float y, Color c){
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=0;
+			color=c;
 		};
+		/// Draws the Point using glVertex3f. No glBegin(GL_POINTS) or glEnd() here.
 		void draw(){
 			color.set();
 			glVertex3f(coords[0], coords[1], coords[2]);
 		}
 };
+/** Operations : A class that has static functions.
+ * meaning, you can call these functions as Operations::function() without bothering to
+ * create an object of that particular class.
+ */
 class Operations{
 	public:
+	/// The generic bresenham. Works for any slope, any angle, anything!
 	static void bresenham(Point a, Point b){
 		float x0=a.getCoords()[0];
 		float y0=a.getCoords()[1];
@@ -115,23 +140,33 @@ class Operations{
 			}
 		}
 	}
+	static midpointcircle(Point x, float radius){
+	}
 };
+/** Line class:
+ * Implements all the functionalities required for a line. Various types
+ * of constructors, own color, etc
+ */
 class Line{
 	public:
 		Point a;
 		Point b;
 		Color color;
+		/// Constructor - Takes two Point objects from and to.
 		Line(Point from, Point to){
 			a=from;
 			b=to;
 			Color color (1.0f, 1.0f, 1.0f);
 		};
+		/// Empty Constructor
 		Line(){};
+		/// Constructor - Takes two point objects from and to, and a Color object.
 		Line(Point from, Point to, Color c){
 			a=from;
 			b=to;
 			color=c;
 		};
+		/// Returns a Point - one of the from and two. Pass an int - 0 for 'from' and nonzero for 'to'.
 		Point getPoint(int index){
 			if(index){
 				return b;
@@ -140,11 +175,18 @@ class Line{
 				return a;
 			}
 		}
+		/// Draws the line itself using Operations::bresenham.
 		void draw(){
 			color.set();
 			Operations::bresenham(a, b);
 		}
 };
+/** Implemented Quadrangle. a four-sided quadrangle, arbit vertices can be given.
+ * Only two vertices can also be given, in which case they will be the bottom left and the 
+ * top right vertices.
+ * a state variable decides whether the quadrangle is filled or not. (0 or nonzero).
+ * Two colors - one is line color and the other is fill color.
+ */
 class Quadrangle{
 	public:
 		Point a;
@@ -153,7 +195,9 @@ class Quadrangle{
 		Point d;
 		Color linecolor;
 		Color fillcolor;
-		int state;//filled=1, empty=0
+		///filled=1, empty=0
+		int state;
+		/// Constructor that takes 4 vertices and a state.
 		Quadrangle(Point one, Point two, Point three, Point four, int s){
 			a=one;
 			b=two;
@@ -163,6 +207,7 @@ class Quadrangle{
 			Color fillcolor (1.0f, 1.0f, 1.0f);
 			Color linecolor(1.0f, 1.0f, 1.0f);
 		};
+		/// Constructor that takes two vertices - bottom left and top right and a state - 0 unfilled and 1 filled, and a linecolor and a fillcolor Color objects.
 		Quadrangle(Point one, Point two, int s, Color l, Color f){
 			a=one;
 			Point b (one.getCoords()[0], two.getCoords()[1]);
@@ -172,6 +217,7 @@ class Quadrangle{
 			fillcolor=f;
 			linecolor=l;
 		};
+		/// Constructor that simply takes two points , bottom left and top right
 		Quadrangle(Point one, Point two){
 			a=one;
 			Point b(one.getCoords()[0], two.getCoords()[1]);
@@ -181,6 +227,7 @@ class Quadrangle{
 			Color fillcolor(1.0f, 1.0f, 1.0f);
 			Color linecolor(1.0f , 1.0f , 1.0f);
 		};
+		/// Constructor which takes everything, 4 Point Objects, state (0 unfilled, 1 filled), 2 Color objects for line and fill colors
 		Quadrangle(Point one, Point two, Point three, Point four, int s, Color l, Color f){
 			a=one;
 			b=two;
@@ -190,6 +237,7 @@ class Quadrangle{
 			linecolor=l;
 			fillcolor=f;
 		};
+		/// Constructor that takes just 4 points and initializes both colors to white and state to unfilled (0)
 		Quadrangle(Point one, Point two, Point three, Point four){
 			a=one;
 			b=two;
@@ -199,6 +247,7 @@ class Quadrangle{
 			Color fillcolor(1.0f, 1.0f, 1.0f);
 			Color linecolor(1.0f, 1.0f, 1.0f);
 		};
+		/// Get back one of the points - pass 0-3 as arguments
 		Point getPoint(int index){
 			switch(index){
 				case 0:
@@ -218,6 +267,7 @@ class Quadrangle{
 					break;
 			}
 		}
+		/// draws itself using Operations::bresenham() for every pair of vertices
 		void draw(){
 			linecolor.set();
 			Operations::bresenham(a, b);
@@ -225,6 +275,7 @@ class Quadrangle{
 			Operations::bresenham(c, d);
 			Operations::bresenham(d, a);
 		}
+		/// Fill algoritm not implemented fully - so will take time for this to come to working condition
 		void fill(){
 			if(state){
 			fillcolor.set();

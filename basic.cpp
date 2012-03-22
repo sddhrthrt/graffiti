@@ -32,12 +32,12 @@ void display(void){
 		Point p3 (1.0f, 0.0f);
 		Point p4 (1.0f, -1.0f);
 		Point p5 (-1.0f, -1.0f);
-		Line l1 (p1, p2);
-		Line l2 (p2, p3);
-		Line l3 (p3, p4);
-		Line l4 (p4, p5);
-		Line l5 (p5, p1);
 		Color c (1.0f, 0.0f, 0.0f);
+		Line l1 (p1, p2, c);
+		Line l2 (p2, p3, c);
+		Line l3 (p3, p4, c);
+		Line l4 (p4, p5, c);
+		Line l5 (p5, p1, c);
 		glBegin(GL_POINTS);
 			l1.draw();
 			l2.draw();
