@@ -4,10 +4,16 @@
 #include<vector>
 #include<cstring>
 #include<math.h>
+#include<stdio.h>
 #include "classes.h"
 using namespace std;
 int ww=500, wh = 500;
-int unit = 80;
+int unit = 100;
+int c, y;
+float ymax=0,ymin=0,value[250],mean[50],total[50],a[245][50];
+Point p[245][50];
+
+#include "co.cpp"
 
 void setval(int x, int y){
 
@@ -27,23 +33,15 @@ void display(void){
 		
 		glLoadIdentity();
 		glTranslatef(0.0f, 0.0f, -6.0f);
-		Point p1 (-1.0f, 0.0f);
-		Point p2 (0.0f, 1.0f);
-		Point p3 (1.0f, 0.0f);
-		Point p4 (1.0f, -1.0f);
-		Point p5 (-1.0f, -1.0f);
-		Color c (1.0f, 0.0f, 0.0f);
-		Line l1 (p1, p2, c);
-		Line l2 (p2, p3, c);
-		Line l3 (p3, p4, c);
-		Line l4 (p4, p5, c);
-		Line l5 (p5, p1, c);
 		glBegin(GL_POINTS);
-			l1.draw();
-			l2.draw();
-			l3.draw();
-			l4.draw();
-			l5.draw();
+		for(int y=0;y<49;y++)
+		{
+			for(int c=0;c<244;c++)
+			{
+				p[c][y].draw();
+			
+			}
+		}	
 		glEnd();
 		glutSwapBuffers();
 }
@@ -59,8 +57,8 @@ void reshape(int w, int h){
 	}
 	glMatrixMode( GL_MODELVIEW);
 	glLoadIdentity();
-	ww= w;
-	wh= h;
+	ww=w;
+	wh=h;
 }
 void keyboard( unsigned char key, int x, int y){
 	switch (key){
@@ -89,11 +87,10 @@ void mouse(int btn, int state, int x, int y){
 	}
 }
 
+
+
 int main(int argc, char** argv){
-
-
-
-
+input_points();
 	glutInit( &argc, argv);
 	init();
 	glutInitDisplayMode( GLUT_RGB | GLUT_DOUBLE);
@@ -104,7 +101,7 @@ int main(int argc, char** argv){
 	glutMouseFunc( mouse);
 	glutMotionFunc( setval);
 	glutKeyboardFunc(keyboard);
-//	glutIdleFunc(display);
+	glutIdleFunc(display);
 	glutSpecialFunc( arrow_keys);
 	glutMainLoop();
 }

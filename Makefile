@@ -1,3 +1,3 @@
 all:
-	gcc -lglut -lGL -lGLU -lGLEW basic.cpp -o basic
-	./basic
+	g++ -lglut -lGL -lGLU -lGLEW basic.cpp -o basic  
+	./basic < co2.txt

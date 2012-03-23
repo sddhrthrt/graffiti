@@ -1,6 +1,8 @@
-/*! \file classes.h
+/** \file classes.h
  * Has definitions of all the classes that are used in the code.
  * The classes currently implemented are: Color, Point, Line, Quadrangle. 
+ * \author Akhil, Anantha, Shrimai, Siddhartha
+ * \date Mar22, 2012
  */
 /// Color
 /// A class that has an array of size three, holding the r, g, b details of the Color object. 
@@ -8,7 +10,7 @@
 class Color{
 	public:
 		float rgb[3];
-		/// Constructor for Color - only one with three arguments. Floats, <=1.0
+		/// \fn Constructor for Color - only one with three arguments. Floats, <=1.0
 		Color(float r, float g, float b){
 			rgb[0]=r;
 			rgb[1]=g;
@@ -34,7 +36,7 @@ class Color{
 		void set(){ 
 			glColor3f(rgb[0],rgb[1],rgb[2]);
 		}
-};
+};///< Stores color in float[3] 
 /*! \class Point
  * Stores the 3 dimensional coordinates and the color of the particular point.
  */
@@ -53,7 +55,7 @@ class Point{
 			coords[1]=y;
 			coords[2]=z;
 		}
-		Point() {};
+		Point() {coords[0]=0.0f, coords[1]=0.0f,coords[2]=0.0f;};
 		/// Constructor with only coordinates, Color defaults to white
 		Point(float x, float y, float z){
 			coords[0]=x;
@@ -87,7 +89,7 @@ class Point{
 			color.set();
 			glVertex3f(coords[0], coords[1], coords[2]);
 		}
-};
+};///<Store the x, y, z float coordinates and the Color object of a Point.
 /** Operations : A class that has static functions.
  * meaning, you can call these functions as Operations::function() without bothering to
  * create an object of that particular class.
@@ -140,9 +142,40 @@ class Operations{
 			}
 		}
 	}
-	static midpointcircle(Point x, float radius){
+	/// This function draws a circle at the given Point, and with radius.
+	static void midpointcircle(Point point, float radius){
+		float xx,yy;
+		xx=point.getCoords()[0];
+		yy=point.getCoords()[1];
+		float p;
+		float x,y;
+		y=radius;
+		p=(5/4)-radius;
+		for(x=0.0;x<=y;) {
+			glVertex2f(xx+x, yy+y);
+			glVertex2f(xx-x, yy+y);
+			glVertex2f(xx+x, yy-y);
+			glVertex2f(xx-x, yy-y);
+			glVertex2f(xx+y, yy+x);
+			glVertex2f(xx+y, yy-x);
+			glVertex2f(xx-y, yy+x);
+			glVertex2f(xx-y, yy-x);
+			if(p<0)
+			{
+				x=x+0.0001;
+				p=p+2*x+0.0001;
+			}
+			else
+			{
+				x=x+0.0001;
+				y=y-0.0001;
+				p=p+2*x-2*y+0.0001;
+			}
+	
+		}
 	}
-};
+
+};///< Class that holds static functions that implement the basic drawing algorithms.
 /** Line class:
  * Implements all the functionalities required for a line. Various types
  * of constructors, own color, etc
@@ -179,6 +212,38 @@ class Line{
 		void draw(){
 			color.set();
 			Operations::bresenham(a, b);
+		}
+};///<  Class that stores the fromand to Point objects of a line and its Color.
+/** Class that stores the attributes required for a circle.
+ * This has a Point, a radius and a color.
+ * has a draw() function that calls the midpointcircle() function and draw itself.
+ */
+class Circle{
+	public:
+		Point centre;
+		Color c;
+		int state;
+		float radius;
+		/// Constructor that takes only a Point and a radius
+		Circle(Point p, float r){
+			Color c (1.0f, 1.0f, 1.0f);
+			radius=r;
+			centre=p;
+		};
+		/// Constructor that takes a Point, a radius, a Color.
+		Circle(Point p, float r, Color color){
+			c=color;
+			radius=r;
+			centre=p;
+		};
+		/// returns Point.
+		Point getCentre(){
+			return centre;
+		};
+		/// calls midpointcircle() function to draw itself.
+		void draw(){
+			c.set();
+			Operations::midpointcircle(centre, radius);
 		}
 };
 /** Implemented Quadrangle. a four-sided quadrangle, arbit vertices can be given.
@@ -282,6 +347,6 @@ class Quadrangle{
 		//	fillPolygon(a, b, c, d);
 			}
 		}
-};
+};///< Implemented a quadrangle using 4 or 2 Point objects, a state variable that decides filling or not, a fillcolor and a linecolor Color objects
 
 
