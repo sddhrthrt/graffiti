@@ -9,9 +9,6 @@
 using namespace std;
 int ww=500, wh = 500;
 int unit = 100;
-int c, y;
-float ymax=0,ymin=0,value[250],mean[50],total[50],a[245][50];
-Point p[245][50];
 
 #include "co.cpp"
 
