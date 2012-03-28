@@ -296,12 +296,12 @@ class Graph{
 		int join;
 		/// Constructor that takes data, x divisions, y divisions.
 		Graph (int row, int xx, int x, int yy, int y){
-			join=(int)(x_avail/x_div);
 			year=row;
 			x_div=x;
 			x_avail=xx;
 			y_avail=yy;
 			y_div=y;
+			join=(int)(x_avail/x_div);
 		} 
 		/// Test drawing function.
 		void plot(){
@@ -317,13 +317,12 @@ class Graph{
 			for(int i=0;i<x_div;i++){
 				total=0;
 				for(int j=1;j<=join;j++){
-					std::cout<<join*i+j<<"\n";
 					if((join*i+j)<x_avail)
 						total+=mean[join*i+j];
 				}
 				
 				total=(float)total/(float)join;
-				
+				std::cout <<total<<"\n";
 				glVertex2f( ((X-0.5f)/x_div)*(i+1)+0.5f, total+0.5f);
 			}
 			
