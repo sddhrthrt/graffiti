@@ -5,19 +5,22 @@
 #include<cstring>
 #include<math.h>
 #include<stdio.h>
-#include "classes.h"
-using namespace std;
 int ww=500, wh = 500;
-int unit = 100;
-
+float X=500.0f, Y=500.0f ;
+int unit = 10;
+int year, c, y, count; 
+int years[50];
+float ymax=0,ymin=0,value[250],mean[50],total[50],a[50][245][3];
+int curr_year=0;
+#include "classes.h"
 #include "co.cpp"
-
+using namespace std;
 void setval(int x, int y){
 
 }
 void init( void){
 		glShadeModel(GL_SMOOTH);
-		glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
+		glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
 		glClearDepth(1.0f);
 		glEnable(GL_DEPTH_TEST);
 		glDepthFunc(GL_LEQUAL);
@@ -28,17 +31,12 @@ void init( void){
 void display(void){
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
+		glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
 		glLoadIdentity();
-		glTranslatef(0.0f, 0.0f, -6.0f);
+		//glTranslatef(0.0f, 0.0f, -6.0f);
 		glBegin(GL_POINTS);
-		for(int y=0;y<49;y++)
-		{
-			for(int c=0;c<244;c++)
-			{
-				p[c][y].draw();
-			
-			}
-		}	
+			Graph g (curr_year, 49, 10, 100, 100);
+			g.plot();
 		glEnd();
 		glutSwapBuffers();
 }
@@ -46,21 +44,36 @@ void reshape(int w, int h){
 	glViewport(0,0,w,h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	if( h==0 ){
+	/*if( h==0 ){
 		gluPerspective(unit, (float) w, 1.0, 5000.0);
 	}
 	else{
 		gluPerspective(unit, (float)w/(float)h, 1.0, 5000.0);
-	}
+	}*/
+	ww=w;
+	X=(float)ww/(float)unit;
+	wh=h;
+	Y=(float)wh/(float)unit;
+	gluOrtho2D(0.0f, X, 0.0f, Y);
+	cout<<X<<", "<<Y<<"\n";
 	glMatrixMode( GL_MODELVIEW);
 	glLoadIdentity();
-	ww=w;
-	wh=h;
 }
 void keyboard( unsigned char key, int x, int y){
 	switch (key){
 		case 'q':
 			exit(0);
+			break;
+		case 'n':
+			if(curr_year<48){
+				curr_year++;
+			}
+			break;
+		case 'p':
+			if(curr_year>=1){
+				curr_year--;
+			}
+			break;
 		default:
 			break;
 	}
@@ -93,6 +106,7 @@ input_points();
 	glutInitDisplayMode( GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowSize( 500, 500);
 	glutCreateWindow( "graffITi");
+//	glutFullScreen();
 	glutDisplayFunc( display);
 	glutReshapeFunc(reshape);
 	glutMouseFunc( mouse);

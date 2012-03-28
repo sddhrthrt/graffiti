@@ -1,7 +1,7 @@
 /** \file classes.h
  * Has definitions of all the classes that are used in the code.
  * The classes currently implemented are: Color, Point, Line, Quadrangle. 
- * \author Akhil, Anantha, Shrimai, Siddhartha
+ * \author Akhil, Anantha, Chandrakanth, Shrimai, Siddhartha
  * \date Mar22, 2012
  */
 /// Color
@@ -17,7 +17,7 @@ class Color{
 			rgb[2]=b;
 		};
 		/// Constructor - initializes color to white
-		Color(){rgb[0]=1.0f; rgb[1]=1.0f; rgb[2]=1.0f;};
+		Color(){rgb[0]=0.0f; rgb[1]=0.0f; rgb[2]=0.0f;};
 		/// A function that returns the color value of the object, by channel. Arguments are 'r', 'g', 'b'.
 		float get(char color){ 
 			switch(color){
@@ -61,14 +61,14 @@ class Point{
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=z;
-			Color color (1.0f, 1.0f, 1.0f);
+			Color color (0.0f, 0.0f, 0.0f);
 		};
 		/// Constructor with only 2 coordinates and no color, z and color default to 0 and white respectively
 		Point(float x, float y){
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=0.0f;
-			Color color(1.0f, 1.0f, 1.0f);
+			Color color(0.0f, 0.0f, 0.0f);
 		};
 		/// Constructor with 3 Coordinates and Color.
 		Point(float x, float y, float z, Color c){
@@ -89,6 +89,17 @@ class Point{
 			color.set();
 			glVertex3f(coords[0], coords[1], coords[2]);
 		}
+		/// multiply the point's x, y coordinates by a particular scale. Helpful in Graph, i think. Takes two arguments, x_scale, y_scale. Remember, multiplies.
+		void scale(float x_factor, float y_factor){
+			coords[0]*=x_factor;
+			coords[1]*=y_factor;
+		}
+		/// multiply the point's x, y, z coordinates by a particular scale. Helpful in Graph, i think. Takes three arguments, x_scale, y_scale, z_scale.
+		void scale(float x_factor, float y_factor, float z_factor){
+			coords[0]*=x_factor;
+			coords[1]*=y_factor;
+			coords[2]*=z_factor;
+		}
 };///<Store the x, y, z float coordinates and the Color object of a Point.
 /** Operations : A class that has static functions.
  * meaning, you can call these functions as Operations::function() without bothering to
@@ -97,7 +108,7 @@ class Point{
 class Operations{
 	public:
 	/// The generic bresenham. Works for any slope, any angle, anything!
-	static void bresenham(Point a, Point b){
+	static void bresenham(Point a, Point b, int thickness){
 		float x0=a.getCoords()[0];
 		float y0=a.getCoords()[1];
 		float x1=b.getCoords()[0];
@@ -128,9 +139,17 @@ class Operations{
 		float tdy=2*dy;
 		float tdyminustdx=tdy-2*dx;
 
+		glPointSize(10.0f);
 		float p=tdy-dx;
 		for(int i=0;i<(dx/INCR);i++){
 			glVertex2f(x, y);
+/*			for(int th=1; th<thickness; th++){
+				glVertex2f(x+th*INCR, y);
+				glVertex2f(x-th*INCR, y);
+				glVertex2f(x, y+th*INCR);
+				glVertex2f(x, y-th*INCR);
+			}
+*/
 			if(p<0){
 				x+=INCRX;
 				p=p+tdy;
@@ -185,11 +204,13 @@ class Line{
 		Point a;
 		Point b;
 		Color color;
+		int thickness;
 		/// Constructor - Takes two Point objects from and to.
 		Line(Point from, Point to){
 			a=from;
 			b=to;
-			Color color (1.0f, 1.0f, 1.0f);
+			Color color (0.0f, 0.0f, 0.0f);
+			thickness=1;
 		};
 		/// Empty Constructor
 		Line(){};
@@ -198,6 +219,7 @@ class Line{
 			a=from;
 			b=to;
 			color=c;
+			thickness=1;
 		};
 		/// Returns a Point - one of the from and two. Pass an int - 0 for 'from' and nonzero for 'to'.
 		Point getPoint(int index){
@@ -208,10 +230,28 @@ class Line{
 				return a;
 			}
 		}
+		void setPoints(Point p1, Point p2){
+			a=p1;
+			b=p2;
+		}
 		/// Draws the line itself using Operations::bresenham.
 		void draw(){
 			color.set();
-			Operations::bresenham(a, b);
+			Operations::bresenham(a, b, thickness);
+		}
+		/// sets the thickness of the line
+		void setThickness(int th){
+			thickness=th;
+		}
+		/// increases thickness
+		void incThickness(int th){
+			thickness+=1;
+		}
+		/// decreases thickness
+		void decThickness(int th){
+			if(thickness>0){
+				thickness--;
+			}
 		}
 };///<  Class that stores the fromand to Point objects of a line and its Color.
 /** Class that stores the attributes required for a circle.
@@ -226,14 +266,14 @@ class Circle{
 		float radius;
 		/// Constructor that takes only a Point and a radius
 		Circle(Point p, float r){
-			Color c (1.0f, 1.0f, 1.0f);
+			Color c (0.0f, 0.0f, 0.0f);
 			radius=r;
 			centre=p;
 		};
 		/// Constructor that takes a Point, a radius, a Color.
 		Circle(Point p, float r, Color color){
 			c=color;
-			radius=r;
+		radius=r;
 			centre=p;
 		};
 		/// returns Point.
@@ -246,107 +286,48 @@ class Circle{
 			Operations::midpointcircle(centre, radius);
 		}
 };
-/** Implemented Quadrangle. a four-sided quadrangle, arbit vertices can be given.
- * Only two vertices can also be given, in which case they will be the bottom left and the 
- * top right vertices.
- * a state variable decides whether the quadrangle is filled or not. (0 or nonzero).
- * Two colors - one is line color and the other is fill color.
- */
-class Quadrangle{
+class Graph{
 	public:
-		Point a;
-		Point b;
-		Point c;
-		Point d;
-		Color linecolor;
-		Color fillcolor;
-		///filled=1, empty=0
-		int state;
-		/// Constructor that takes 4 vertices and a state.
-		Quadrangle(Point one, Point two, Point three, Point four, int s){
-			a=one;
-			b=two;
-			c=three;
-			d=four;
-			state=s;
-			Color fillcolor (1.0f, 1.0f, 1.0f);
-			Color linecolor(1.0f, 1.0f, 1.0f);
-		};
-		/// Constructor that takes two vertices - bottom left and top right and a state - 0 unfilled and 1 filled, and a linecolor and a fillcolor Color objects.
-		Quadrangle(Point one, Point two, int s, Color l, Color f){
-			a=one;
-			Point b (one.getCoords()[0], two.getCoords()[1]);
-			Point c (two.getCoords()[0], one.getCoords()[1]);
-			d=two;
-			state=s;
-			fillcolor=f;
-			linecolor=l;
-		};
-		/// Constructor that simply takes two points , bottom left and top right
-		Quadrangle(Point one, Point two){
-			a=one;
-			Point b(one.getCoords()[0], two.getCoords()[1]);
-			Point c(two.getCoords()[0], one.getCoords()[1]);
-			d=two;
-			state=0;
-			Color fillcolor(1.0f, 1.0f, 1.0f);
-			Color linecolor(1.0f , 1.0f , 1.0f);
-		};
-		/// Constructor which takes everything, 4 Point Objects, state (0 unfilled, 1 filled), 2 Color objects for line and fill colors
-		Quadrangle(Point one, Point two, Point three, Point four, int s, Color l, Color f){
-			a=one;
-			b=two;
-			c=three;
-			d=four;
-			state=s;
-			linecolor=l;
-			fillcolor=f;
-		};
-		/// Constructor that takes just 4 points and initializes both colors to white and state to unfilled (0)
-		Quadrangle(Point one, Point two, Point three, Point four){
-			a=one;
-			b=two;
-			c=three;
-			d=four;
-			state=0;
-			Color fillcolor(1.0f, 1.0f, 1.0f);
-			Color linecolor(1.0f, 1.0f, 1.0f);
-		};
-		/// Get back one of the points - pass 0-3 as arguments
-		Point getPoint(int index){
-			switch(index){
-				case 0:
-					return a;
-					break;
-				case 1:
-					return b;
-					break;
-				case 2:
-					return c;
-					break;
-				case 3:
-					return d;
-					break;
-				default:
-					return a;
-					break;
+		/// Number of divisions on each axes
+		int x_div, y_div, x_avail, y_avail;
+		/// Labels for each axis
+		int* x_labels, y_labels;
+		int year;
+		int join;
+		/// Constructor that takes data, x divisions, y divisions.
+		Graph (int row, int xx, int x, int yy, int y){
+			join=(int)(x_avail/x_div);
+			year=row;
+			x_div=x;
+			x_avail=xx;
+			y_avail=yy;
+			y_div=y;
+		} 
+		/// Test drawing function.
+		void plot(){
+			Point origin (0.5f, 0.5f);
+			Point x_end (X-0.5f, 0.5f);
+			Point y_end (0.5f, Y-0.5f);
+			Line x_axis (origin, x_end);
+			Line y_axis (origin, y_end);
+			x_axis.setThickness(10);
+			x_axis.draw();
+			y_axis.draw();
+			float total;
+			for(int i=0;i<x_div;i++){
+				total=0;
+				for(int j=1;j<=join;j++){
+					std::cout<<join*i+j<<"\n";
+					if((join*i+j)<x_avail)
+						total+=mean[join*i+j];
+				}
+				
+				total=(float)total/(float)join;
+				
+				glVertex2f( ((X-0.5f)/x_div)*(i+1)+0.5f, total+0.5f);
 			}
+			
 		}
-		/// draws itself using Operations::bresenham() for every pair of vertices
-		void draw(){
-			linecolor.set();
-			Operations::bresenham(a, b);
-			Operations::bresenham(b, c);
-			Operations::bresenham(c, d);
-			Operations::bresenham(d, a);
-		}
-		/// Fill algoritm not implemented fully - so will take time for this to come to working condition
-		void fill(){
-			if(state){
-			fillcolor.set();
-		//	fillPolygon(a, b, c, d);
-			}
-		}
-};///< Implemented a quadrangle using 4 or 2 Point objects, a state variable that decides filling or not, a fillcolor and a linecolor Color objects
 
+};
 
