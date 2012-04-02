@@ -1,0 +1,87 @@
+\hypertarget{classLine}{
+\section{Line Class Reference}
+\label{classLine}\index{Line@{Line}}
+}
+
+
+{\ttfamily \#include $<$classes.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLine_a3f2db972115aec98f4b69c1182fc923c}{
+\hyperlink{classLine_a3f2db972115aec98f4b69c1182fc923c}{Line} (\hyperlink{classPoint}{Point} from, \hyperlink{classPoint}{Point} to)}
+\label{classLine_a3f2db972115aec98f4b69c1182fc923c}
+
+\begin{DoxyCompactList}\small\item\em Constructor -\/ Takes two \hyperlink{classPoint}{Point} objects from and to. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{
+\hyperlink{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{Line} ()}
+\label{classLine_acc11b8a429d8cdd63ba6803dff5602b3}
+
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_a6cb6a1afa3c3e6e4d7ea540493b2b04c}{
+\hyperlink{classLine_a6cb6a1afa3c3e6e4d7ea540493b2b04c}{Line} (\hyperlink{classPoint}{Point} from, \hyperlink{classPoint}{Point} to, \hyperlink{classColor}{Color} c)}
+\label{classLine_a6cb6a1afa3c3e6e4d7ea540493b2b04c}
+
+\begin{DoxyCompactList}\small\item\em Constructor -\/ Takes two point objects from and to, and a \hyperlink{classColor}{Color} object. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_ab65c33d2958f31c95e08e872ba5d42c0}{
+\hyperlink{classPoint}{Point} \hyperlink{classLine_ab65c33d2958f31c95e08e872ba5d42c0}{getPoint} (int index)}
+\label{classLine_ab65c33d2958f31c95e08e872ba5d42c0}
+
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classPoint}{Point} -\/ one of the from and two. Pass an int -\/ 0 for 'from' and nonzero for 'to'. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_adf48f46c29bb4b7d2d3c45f5714f6d85}{
+void {\bfseries setPoints} (\hyperlink{classPoint}{Point} p1, \hyperlink{classPoint}{Point} p2)}
+\label{classLine_adf48f46c29bb4b7d2d3c45f5714f6d85}
+
+\item 
+\hypertarget{classLine_ab6265993bf5acbc28830181c3e712f10}{
+void \hyperlink{classLine_ab6265993bf5acbc28830181c3e712f10}{draw} ()}
+\label{classLine_ab6265993bf5acbc28830181c3e712f10}
+
+\begin{DoxyCompactList}\small\item\em Draws the line itself using \hyperlink{classOperations_a8657f54e02cac774a488d6e8731c5986}{Operations::bresenham}. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_abf2e027e417d3a1e3b42a36138ae3bfa}{
+void \hyperlink{classLine_abf2e027e417d3a1e3b42a36138ae3bfa}{setThickness} (int th)}
+\label{classLine_abf2e027e417d3a1e3b42a36138ae3bfa}
+
+\begin{DoxyCompactList}\small\item\em sets the thickness of the line \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_a4895d295a063bc854b8a015e63b18db6}{
+void \hyperlink{classLine_a4895d295a063bc854b8a015e63b18db6}{incThickness} (int th)}
+\label{classLine_a4895d295a063bc854b8a015e63b18db6}
+
+\begin{DoxyCompactList}\small\item\em increases thickness \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_ad0622d97055421701a58f15cbc149f15}{
+void \hyperlink{classLine_ad0622d97055421701a58f15cbc149f15}{decThickness} (int th)}
+\label{classLine_ad0622d97055421701a58f15cbc149f15}
+
+\begin{DoxyCompactList}\small\item\em decreases thickness \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLine_ab25ae45978586dbe4c329e917bbfdf1b}{
+\hyperlink{classPoint}{Point} {\bfseries a}}
+\label{classLine_ab25ae45978586dbe4c329e917bbfdf1b}
+
+\item 
+\hypertarget{classLine_aea716819f6f2713e6ef5e3b62290bb52}{
+\hyperlink{classPoint}{Point} {\bfseries b}}
+\label{classLine_aea716819f6f2713e6ef5e3b62290bb52}
+
+\item 
+\hypertarget{classLine_ab43d551232869437084b5905b7a53798}{
+\hyperlink{classColor}{Color} {\bfseries color}}
+\label{classLine_ab43d551232869437084b5905b7a53798}
+
+\item 
+\hypertarget{classLine_a6100557924ecaf1efb0575ff496147f9}{
+int {\bfseries thickness}}
+\label{classLine_a6100557924ecaf1efb0575ff496147f9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classLine}{Line} class: Implements all the functionalities required for a line. Various types of constructors, own color, etc 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classes_8h}{classes.h}\end{DoxyCompactItemize}

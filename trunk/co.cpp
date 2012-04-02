@@ -20,8 +20,7 @@ void input_points()
 				}
 				else{
 					if(a[y][c][1]<ymin)
-						ymin=a[y][c][1];
-					total[y]+=a[y][c][1];
+						ymin=a[y][c][1];	total[y]+=a[y][c][1];
 				}
 				if(a[y][c][1]>ymax)
 				ymax=a[y][c][1];

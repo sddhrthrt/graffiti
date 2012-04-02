@@ -8,13 +8,12 @@
 int ww=500, wh = 500;
 float X=500.0f, Y=500.0f ;
 int unit = 10;
-int year, c, y, count; 
-int years[50];
-float ymax=0,ymin=0,value[250],mean[50],total[50],a[50][245][3];
 int curr_year=0;
-#include "classes.h"
-#include "co.cpp"
+
 using namespace std;
+
+#include "classes.h"
+Graph g ;
 void setval(int x, int y){
 
 }
@@ -35,7 +34,6 @@ void display(void){
 		glLoadIdentity();
 		//glTranslatef(0.0f, 0.0f, -6.0f);
 		glBegin(GL_POINTS);
-			Graph g (curr_year, 49, 10, 100, 100);
 			g.plot();
 		glEnd();
 		glutSwapBuffers();
@@ -100,7 +98,7 @@ void mouse(int btn, int state, int x, int y){
 
 
 int main(int argc, char** argv){
-input_points();
+	g.read();
 	glutInit( &argc, argv);
 	init();
 	glutInitDisplayMode( GLUT_RGB | GLUT_DOUBLE);

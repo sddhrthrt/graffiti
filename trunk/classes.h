@@ -113,9 +113,9 @@ class Operations{
 		float y0=a.getCoords()[1];
 		float x1=b.getCoords()[0];
 		float y1=b.getCoords()[1];
-		float INCR=0.0001;
-		float INCRX=0.0001;
-		float INCRY=0.0001;
+		float INCR=0.00001;
+		float INCRX=0.00001;
+		float INCRY=0.00001;
 		float dx=x1-x0;
 		float dy=y1-y0;
 		float x=x0;
@@ -286,23 +286,94 @@ class Circle{
 			Operations::midpointcircle(centre, radius);
 		}
 };
+/** A class to read data.
+ *
+ */
+class datareader{
+	vector<vector<Point> > allyears;
+	vector<Point> totals;
+	int year, c, y, count;
+	int years[50];
+	float ymax,ymin,value[250],mean[50],total[50];
+	public:
+		datareader () {year;c=0;y=0;count=0;};
+		vector<vector<Point> > getInput(){
+			return allyears;
+		}
+		vector<Point> getTotals(){
+			return totals;
+		}
+		void read(){
+			ymax=0;
+			ymin=0;
+			float totalmax=0;
+			float yvalue;
+			scanf("%d", &count);
+			for(y=0;y<count;y++){
+				years[y]=0;
+			}
+			for(y=0;y<count;y++){
+				scanf("%d", &year);
+				years[year-1960]=1;
+			}
+			for(y=0;y<count;y++)
+			{
+				if(years[y]){
+					vector <Point> input;
+					for(c=0;c<244;c++)
+					{
+						scanf("%f",&yvalue);
+						if(c==0){
+							ymin=yvalue;
+							total[y]=yvalue;
+						}
+						else{
+							if(yvalue<ymin)
+								ymin=yvalue;
+							total[y]+=yvalue;
+						}
+						if(yvalue>ymax)
+						ymax=yvalue;
+						Point p ((float)c, yvalue);
+						input.push_back(p);
+					}
+				allyears.push_back(input);
+				if(y==0)
+					totalmax=total[y];
+				else {
+					if(totalmax<total[y]){
+						totalmax=total[y];
+					}
+				}
+				
+			//	std::cout<<mean[y]<<"\n";	
+				}
+			}
+			for(y=0;y<count;y++){
+				total[y]=total[y]/totalmax;
+				Point tot ((float)y, total[y]);
+				totals.push_back( tot);
+				mean[y]=total[y]/(float)244;
+			}
+		}
+};
 class Graph{
 	public:
 		/// Number of divisions on each axes
 		int x_div, y_div, x_avail, y_avail;
-		/// Labels for each axis
+		/// Labels <<for each axis
 		int* x_labels, y_labels;
-		int year;
-		int join;
+		int drawline;
+		vector<vector<Point> > data;	
 		/// Constructor that takes data, x divisions, y divisions.
-		Graph (int row, int xx, int x, int yy, int y){
-			year=row;
-			x_div=x;
-			x_avail=xx;
-			y_avail=yy;
-			y_div=y;
-			join=(int)(x_avail/x_div);
-		} 
+		Graph (){drawline=1;
+		};
+		void read(){
+			datareader d1;
+			d1.read();
+			data.push_back( d1.getTotals() );
+		}			
+			
 		/// Test drawing function.
 		void plot(){
 			Point origin (0.5f, 0.5f);
@@ -313,18 +384,26 @@ class Graph{
 			x_axis.setThickness(10);
 			x_axis.draw();
 			y_axis.draw();
-			float total;
-			for(int i=0;i<x_div;i++){
-				total=0;
-				for(int j=1;j<=join;j++){
-					if((join*i+j)<x_avail)
-						total+=mean[join*i+j];
+			vector<vector<Point> >::iterator i;
+			vector<Point>::iterator j;
+			for(i=data.begin(); i!=data.end();i++){
+				for(j=i->begin();j!=i->end();j++){
+					float a=j->getCoords()[0];
+					float b=j->getCoords()[1];
+					glVertex2f(a+0.5f, b*Y+0.5f);
+					if(j!=i->end()){
+						float c=(j+1)->getCoords()[0];
+						float d=(j+1)->getCoords()[1];
+						Point p1 (a+0.5f, b*Y+0.5f);
+						Point p2 (c+0.5f, d*Y+0.5f);
+						Line l (p1, p2);
+						l.draw();
+					}	
 				}
-				
-				total=(float)total/(float)join;
-				std::cout <<total<<"\n";
-				glVertex2f( ((X-0.5f)/x_div)*(i+1)+0.5f, total+0.5f);
 			}
+						
+
+
 			
 		}
 
