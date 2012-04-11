@@ -7,6 +7,8 @@
 /// Color
 /// A class that has an array of size three, holding the r, g, b details of the Color object. 
 /// 
+vector<void* > rows(2000);
+vector< vector<void*> > segfile(2000, rows);
 class Color{
 	public:
 		float rgb[3];
@@ -40,7 +42,7 @@ class Color{
 /*! \class Point
  * Stores the 3 dimensional coordinates and the color of the particular point.
  */
-class Point{
+class Point {
 	
 	public:
 		float coords[3];
@@ -105,14 +107,16 @@ class Point{
  * meaning, you can call these functions as Operations::function() without bothering to
  * create an object of that particular class.
  */
-class Operations{
+class Operations {
 	public:
 	/// The generic bresenham. Works for any slope, any angle, anything!
-	static void bresenham(Point a, Point b, int thickness){
+	static void bresenham(Point a, Point b ){
 		float x0=a.getCoords()[0];
 		float y0=a.getCoords()[1];
 		float x1=b.getCoords()[0];
 		float y1=b.getCoords()[1];
+		//cout<<x0<<","<<y0<<" to "<<x1<<","<<y1<<"\n";
+
 		float INCR=0.00001;
 		float INCRX=0.00001;
 		float INCRY=0.00001;
@@ -139,17 +143,12 @@ class Operations{
 		float tdy=2*dy;
 		float tdyminustdx=tdy-2*dx;
 
-		glPointSize(10.0f);
 		float p=tdy-dx;
 		for(int i=0;i<(dx/INCR);i++){
+		//	glPointSize(2.5f);
+			//cout<<(int)(x*unit)<<","<<(int)(y*unit)<<"\n";
 			glVertex2f(x, y);
-/*			for(int th=1; th<thickness; th++){
-				glVertex2f(x+th*INCR, y);
-				glVertex2f(x-th*INCR, y);
-				glVertex2f(x, y+th*INCR);
-				glVertex2f(x, y-th*INCR);
-			}
-*/
+
 			if(p<0){
 				x+=INCRX;
 				p=p+tdy;
@@ -166,6 +165,7 @@ class Operations{
 		float xx,yy;
 		xx=point.getCoords()[0];
 		yy=point.getCoords()[1];
+		//cout<<xx<<","<<yy<<"\n";
 		float p;
 		float x,y;
 		y=radius;
@@ -192,6 +192,13 @@ class Operations{
 			}
 	
 		}
+	}
+	static void addToSegfile(void* ob, int x, int y){
+		segfile[x][y]=ob;
+	}
+	static void* getFromSegfile(int x, int y){
+		cout<<x<<", "<<y<<"\n";
+		return segfile[x][y];
 	}
 
 };///< Class that holds static functions that implement the basic drawing algorithms.
@@ -237,7 +244,7 @@ class Line{
 		/// Draws the line itself using Operations::bresenham.
 		void draw(){
 			color.set();
-			Operations::bresenham(a, b, thickness);
+			Operations::bresenham(a, b);
 		}
 		/// sets the thickness of the line
 		void setThickness(int th){
@@ -357,7 +364,7 @@ class datareader{
 			}
 		}
 };
-class Graph{
+class Graph {
 	public:
 		/// Number of divisions on each axes
 		int x_div, y_div, x_avail, y_avail;
@@ -366,8 +373,21 @@ class Graph{
 		int drawline;
 		vector<vector<Point> > data;	
 		/// Constructor that takes data, x divisions, y divisions.
-		Graph (){drawline=1;
+		Graph (){drawline=1;x_div=0;y_div=0;
 		};
+		void setDivisions(int x, int y){
+			x_div=x;
+			y_div=y;
+			cout<<x_div<<","<<y_div<<"\n";
+		}
+		int getDivisions(int index){
+			if(!index){
+				return x_div;
+			}
+			else{
+				return y_div;
+			}
+		}
 		void read(){
 			datareader d1;
 			d1.read();
@@ -381,31 +401,44 @@ class Graph{
 			Point y_end (0.5f, Y-0.5f);
 			Line x_axis (origin, x_end);
 			Line y_axis (origin, y_end);
-			x_axis.setThickness(10);
+			x_axis.setThickness(7);
+			y_axis.setThickness(6);
 			x_axis.draw();
 			y_axis.draw();
 			vector<vector<Point> >::iterator i;
 			vector<Point>::iterator j;
 			for(i=data.begin(); i!=data.end();i++){
+				int size_x=i->size();
+				float scale_x;
+				if(!x_div) scale_x=(X-0.5f)/size_x;
+				else scale_x=(X-0.5f)/x_div;
+
 				for(j=i->begin();j!=i->end();j++){
 					float a=j->getCoords()[0];
 					float b=j->getCoords()[1];
-					glVertex2f(a+0.5f, b*Y+0.5f);
+					int opt=0;
 					if(j!=i->end()){
 						float c=(j+1)->getCoords()[0];
 						float d=(j+1)->getCoords()[1];
-						Point p1 (a+0.5f, b*Y+0.5f);
-						Point p2 (c+0.5f, d*Y+0.5f);
-						Line l (p1, p2);
-						l.draw();
+						if(a*scale_x+0.5f < X ){
+							Point p1 (a*scale_x+0.5f, b*Y+0.5f);
+							Point p2 (c*scale_x+0.5f, d*Y+0.5f);
+							//p1.draw();
+							//p2.draw();
+							Circle c (p1, 1.0f);
+							Line l (p1, p2);
+							l.setThickness(100);
+							c.draw();
+							l.draw();
+						}
 					}	
 				}
 			}
 						
 
 
-			
 		}
+
 
 };
 

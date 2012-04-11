@@ -6,37 +6,37 @@
 #include<math.h>
 #include<stdio.h>
 int ww=500, wh = 500;
-float X=500.0f, Y=500.0f ;
+float X=50.0f, Y=50.0f ;
 int unit = 10;
-int curr_year=0;
-
 using namespace std;
-
 #include "classes.h"
+enum representation{ GRAPH, PIE }curr_representation;
+enum states{ CLICK_WAIT, MENU_SELECT, DRAG_BAR, TEXT_ENTER } curr_mode=CLICK_WAIT;
 Graph g ;
 void setval(int x, int y){
 
 }
 void init( void){
-		glShadeModel(GL_SMOOTH);
 		glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
 		glClearDepth(1.0f);
-		glEnable(GL_DEPTH_TEST);
-		glDepthFunc(GL_LEQUAL);
 		glEnable(GL_COLOR_MATERIAL);
 		glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
 
 void display(void){
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
-		glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
-		glLoadIdentity();
-		//glTranslatef(0.0f, 0.0f, -6.0f);
-		glBegin(GL_POINTS);
-			g.plot();
-		glEnd();
-		glutSwapBuffers();
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			
+			glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+			glLoadIdentity();
+			//glTranslatef(0.0f, 0.0f, -6.0f);
+			glBegin(GL_POINTS);
+					if(curr_representation==GRAPH){
+						g.plot();
+					}
+					else{
+					}
+			glEnd();
+			glutSwapBuffers();
 }
 void reshape(int w, int h){
 	glViewport(0,0,w,h);
@@ -53,7 +53,6 @@ void reshape(int w, int h){
 	wh=h;
 	Y=(float)wh/(float)unit;
 	gluOrtho2D(0.0f, X, 0.0f, Y);
-	cout<<X<<", "<<Y<<"\n";
 	glMatrixMode( GL_MODELVIEW);
 	glLoadIdentity();
 }
@@ -62,15 +61,11 @@ void keyboard( unsigned char key, int x, int y){
 		case 'q':
 			exit(0);
 			break;
-		case 'n':
-			if(curr_year<48){
-				curr_year++;
-			}
+		case 'i':
+			g.setDivisions(g.getDivisions(0)-1,0);
 			break;
-		case 'p':
-			if(curr_year>=1){
-				curr_year--;
-			}
+		case 'o':
+			g.setDivisions(g.getDivisions(0)+1,0);
 			break;
 		default:
 			break;
@@ -90,15 +85,19 @@ void arrow_keys( int a_keys, int x, int y){
 	}
 }
 void mouse(int btn, int state, int x, int y){
-	if(btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
-
+	y=(int)Y*unit-y;
+	if(curr_mode=CLICK_WAIT){
+		if(btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
+		}
 	}
 }
 
 
 
 int main(int argc, char** argv){
+	curr_representation=GRAPH;
 	g.read();
+	g.setDivisions(10, 0);
 	glutInit( &argc, argv);
 	init();
 	glutInitDisplayMode( GLUT_RGB | GLUT_DOUBLE);
