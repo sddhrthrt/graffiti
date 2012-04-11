@@ -1,0 +1,30 @@
+\hypertarget{classes_8h}{
+\section{classes.h File Reference}
+\label{classes_8h}\index{classes.h@{classes.h}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classColor}{Color}
+\item 
+class \hyperlink{classPoint}{Point}
+\item 
+class \hyperlink{classOperations}{Operations}
+\item 
+class \hyperlink{classLine}{Line}
+\item 
+class \hyperlink{classCircle}{Circle}
+\item 
+class \hyperlink{classdatareader}{datareader}
+\item 
+class \hyperlink{classGraph}{Graph}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Has definitions of all the classes that are used in the code. The classes currently implemented are: \hyperlink{classColor}{Color}, \hyperlink{classPoint}{Point}, \hyperlink{classLine}{Line}, Quadrangle. \begin{DoxyAuthor}{Author}
+Akhil, Anantha, Chandrakanth, Shrimai, Siddhartha 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar22, 2012 
+\end{DoxyDate}

@@ -1,0 +1,62 @@
+\hypertarget{classCircle}{
+\section{Circle Class Reference}
+\label{classCircle}\index{Circle@{Circle}}
+}
+
+
+{\ttfamily \#include $<$classes.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCircle_adb820287611a49de7062173b1c2993a5}{
+\hyperlink{classCircle_adb820287611a49de7062173b1c2993a5}{Circle} (\hyperlink{classPoint}{Point} p, float r)}
+\label{classCircle_adb820287611a49de7062173b1c2993a5}
+
+\begin{DoxyCompactList}\small\item\em Constructor that takes only a \hyperlink{classPoint}{Point} and a radius. \item\end{DoxyCompactList}\item 
+\hypertarget{classCircle_a84f9ef0dd7c314d82059a7966eb055e1}{
+\hyperlink{classCircle_a84f9ef0dd7c314d82059a7966eb055e1}{Circle} (\hyperlink{classPoint}{Point} p, float r, \hyperlink{classColor}{Color} color)}
+\label{classCircle_a84f9ef0dd7c314d82059a7966eb055e1}
+
+\begin{DoxyCompactList}\small\item\em Constructor that takes a \hyperlink{classPoint}{Point}, a radius, a \hyperlink{classColor}{Color}. \item\end{DoxyCompactList}\item 
+\hypertarget{classCircle_a4b389af47e8bd2949e5fda32fd92cbbf}{
+\hyperlink{classPoint}{Point} \hyperlink{classCircle_a4b389af47e8bd2949e5fda32fd92cbbf}{getCentre} ()}
+\label{classCircle_a4b389af47e8bd2949e5fda32fd92cbbf}
+
+\begin{DoxyCompactList}\small\item\em returns \hyperlink{classPoint}{Point}. \item\end{DoxyCompactList}\item 
+\hypertarget{classCircle_a3a3f7166e7f629e44f9044b0e537eb22}{
+void \hyperlink{classCircle_a3a3f7166e7f629e44f9044b0e537eb22}{draw} ()}
+\label{classCircle_a3a3f7166e7f629e44f9044b0e537eb22}
+
+\begin{DoxyCompactList}\small\item\em calls midpointcircle() function to draw itself. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCircle_aa50e88d4c8663caede31c4dddce95ee1}{
+\hyperlink{classPoint}{Point} {\bfseries centre}}
+\label{classCircle_aa50e88d4c8663caede31c4dddce95ee1}
+
+\item 
+\hypertarget{classCircle_a6ebd94a554faf1e04bd984b4fc41b817}{
+\hyperlink{classColor}{Color} {\bfseries c}}
+\label{classCircle_a6ebd94a554faf1e04bd984b4fc41b817}
+
+\item 
+\hypertarget{classCircle_af12db617f6e57e628418ee847d66ef36}{
+int {\bfseries state}}
+\label{classCircle_af12db617f6e57e628418ee847d66ef36}
+
+\item 
+\hypertarget{classCircle_a47644132ec8bec0f3a4e8d0e15bcd5d3}{
+float {\bfseries radius}}
+\label{classCircle_a47644132ec8bec0f3a4e8d0e15bcd5d3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that stores the attributes required for a circle. This has a \hyperlink{classPoint}{Point}, a radius and a color. has a \hyperlink{classCircle_a3a3f7166e7f629e44f9044b0e537eb22}{draw()} function that calls the midpointcircle() function and draw itself. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classes_8h}{classes.h}\end{DoxyCompactItemize}

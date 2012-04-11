@@ -1,0 +1,34 @@
+\hypertarget{classdatareader}{
+\section{datareader Class Reference}
+\label{classdatareader}\index{datareader@{datareader}}
+}
+
+
+{\ttfamily \#include $<$classes.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdatareader_a1b6dcbbfb3bf8dda8d65bbc05d918db1}{
+vector$<$ vector$<$ \hyperlink{classPoint}{Point} $>$ $>$ {\bfseries getInput} ()}
+\label{classdatareader_a1b6dcbbfb3bf8dda8d65bbc05d918db1}
+
+\item 
+\hypertarget{classdatareader_a862703e62bd21a7c8ab027509595053b}{
+vector$<$ \hyperlink{classPoint}{Point} $>$ {\bfseries getTotals} ()}
+\label{classdatareader_a862703e62bd21a7c8ab027509595053b}
+
+\item 
+\hypertarget{classdatareader_a6158f90cac629062a8f4499a8aa57e47}{
+void {\bfseries read} ()}
+\label{classdatareader_a6158f90cac629062a8f4499a8aa57e47}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to read data. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classes_8h}{classes.h}\end{DoxyCompactItemize}
