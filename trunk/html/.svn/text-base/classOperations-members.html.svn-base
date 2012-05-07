@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>Operations Member List</h1>This is the complete list of members for <a class="el" href="classOperations.html">Operations</a>, including all inherited members.<table>
+<<<<<<< HEAD
   <tr class="memlist"><td><a class="el" href="classOperations.html#abc4a84859351c624f24e1f9cd3df7c38">bresenham</a>(Point a, Point b, float thickness=1.0f)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [inline, static]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>fetchArea</b>(int x, int y) (defined in <a class="el" href="classOperations.html">Operations</a>)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [inline, static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classOperations.html#a081289c54f417f280eaaa457b7331b79">midpointcircle</a>(Point, float, Color, int, Color, float)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [static]</code></td></tr>
@@ -52,6 +53,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="memlist"><td><a class="el" href="classOperations.html#a6e868999977d002ff2e5b0ef736815d8">simple_line</a>(Point a, Point b, float thickness=1.0f)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [inline, static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classOperations.html#affa7d4015c7dfafb2b5290a7cc64f13d">simple_line_sparse</a>(Point a, Point b, int den=100, float thickness=1.0f)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [inline, static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classOperations.html#add01a5b901669d4bb67e2f631f5b817a">valueBasedColor</a>(float val, float min, float max)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [inline, static]</code></td></tr>
+=======
+  <tr class="memlist"><td><a class="el" href="classOperations.html#a8657f54e02cac774a488d6e8731c5986">bresenham</a>(Point a, Point b, int thickness)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [inline, static]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classOperations.html#a4596a2e2e90f52ef99fcbb768c14ca04">midpointcircle</a>(Point point, float radius)</td><td><a class="el" href="classOperations.html">Operations</a></td><td><code> [inline, static]</code></td></tr>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </table></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -67,7 +72,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

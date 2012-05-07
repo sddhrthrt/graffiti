@@ -9,6 +9,7 @@
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
 \hypertarget{classOperations_ab839b731a3e50163ada788ac94f91a75}{
 static void \hyperlink{classOperations_ab839b731a3e50163ada788ac94f91a75}{setPallete} (int index)}
 \label{classOperations_ab839b731a3e50163ada788ac94f91a75}
@@ -43,11 +44,24 @@ static void \hyperlink{classOperations_abc4a84859351c624f24e1f9cd3df7c38}{bresen
 \begin{DoxyCompactList}\small\item\em The generic bresenham. Works for any slope, any angle, anything! \item\end{DoxyCompactList}\item 
 static void \hyperlink{classOperations_a081289c54f417f280eaaa457b7331b79}{midpointcircle} (\hyperlink{classPoint}{Point}, float, \hyperlink{classColor}{Color}, int, \hyperlink{classColor}{Color}, float)
 \begin{DoxyCompactList}\small\item\em Just the prototype here -\/ declared later for obvious reasons -\/ it needs line object and the line objects are declared and defined only later. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+=======
+\hypertarget{classOperations_a8657f54e02cac774a488d6e8731c5986}{
+static void \hyperlink{classOperations_a8657f54e02cac774a488d6e8731c5986}{bresenham} (\hyperlink{classPoint}{Point} a, \hyperlink{classPoint}{Point} b, int thickness)}
+\label{classOperations_a8657f54e02cac774a488d6e8731c5986}
+
+\begin{DoxyCompactList}\small\item\em The generic bresenham. Works for any slope, any angle, anything! \item\end{DoxyCompactList}\item 
+\hypertarget{classOperations_a4596a2e2e90f52ef99fcbb768c14ca04}{
+static void \hyperlink{classOperations_a4596a2e2e90f52ef99fcbb768c14ca04}{midpointcircle} (\hyperlink{classPoint}{Point} point, float radius)}
+\label{classOperations_a4596a2e2e90f52ef99fcbb768c14ca04}
+
+\begin{DoxyCompactList}\small\item\em This function draws a circle at the given \hyperlink{classPoint}{Point}, and with radius. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 
 
 \subsection{Detailed Description}
 \hyperlink{classOperations}{Operations} : A class that has static functions. meaning, you can call these functions as Operations::function() without bothering to create an object of that particular class. 
 
+<<<<<<< HEAD
 \subsection{Member Function Documentation}
 \hypertarget{classOperations_a081289c54f417f280eaaa457b7331b79}{
 \index{Operations@{Operations}!midpointcircle@{midpointcircle}}
@@ -69,6 +83,8 @@ managed to write a function that takes the density of the line by the user. Dens
 
 This can be of use when there is heavy filling work. We can fill it cheaply using about 50 dots per unit. Can also be used for drawing dotted lines ;) as a fluke. 
 
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
 \hyperlink{classes_8h}{classes.h}\end{DoxyCompactItemize}

@@ -49,6 +49,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="classOperations-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
+<<<<<<< HEAD
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab839b731a3e50163ada788ac94f91a75"></a><!-- doxytag: member="Operations::setPallete" ref="ab839b731a3e50163ada788ac94f91a75" args="(int index)" -->
 static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperations.html#ab839b731a3e50163ada788ac94f91a75">setPallete</a> (int index)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">takes no arguments as of now, sets the pallete[] to various colors. In future, should be configured to take array of colors and set the values of the array as the colors for palletes. <br/></td></tr>
@@ -170,6 +171,17 @@ static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
+=======
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8657f54e02cac774a488d6e8731c5986"></a><!-- doxytag: member="Operations::bresenham" ref="a8657f54e02cac774a488d6e8731c5986" args="(Point a, Point b, int thickness)" -->
+static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperations.html#a8657f54e02cac774a488d6e8731c5986">bresenham</a> (<a class="el" href="classPoint.html">Point</a> a, <a class="el" href="classPoint.html">Point</a> b, int thickness)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The generic bresenham. Works for any slope, any angle, anything! <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4596a2e2e90f52ef99fcbb768c14ca04"></a><!-- doxytag: member="Operations::midpointcircle" ref="a4596a2e2e90f52ef99fcbb768c14ca04" args="(Point point, float radius)" -->
+static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperations.html#a4596a2e2e90f52ef99fcbb768c14ca04">midpointcircle</a> (<a class="el" href="classPoint.html">Point</a> point, float radius)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function draws a circle at the given <a class="el" href="classPoint.html">Point</a>, and with radius. <br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><a class="el" href="classOperations.html">Operations</a> : A class that has static functions. meaning, you can call these functions as Operations::function() without bothering to create an object of that particular class. </p>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="classes_8h_source.html">classes.h</a></li>
 </ul>
@@ -188,7 +200,11 @@ static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

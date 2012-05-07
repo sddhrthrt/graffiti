@@ -2,6 +2,13 @@
 \section{Color Class Reference}
 \label{classColor}\index{Color@{Color}}
 }
+<<<<<<< HEAD
+=======
+
+
+{\ttfamily \#include $<$classes.h$>$}
+
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,12 +31,16 @@ float \hyperlink{classColor_a1cf39cdb0f05d4ad3548973c3b5957b5}{get} (char color)
 void \hyperlink{classColor_a4dabfcb970d79805cad2fa59a2ca839d}{set} ()}
 \label{classColor_a4dabfcb970d79805cad2fa59a2ca839d}
 
+<<<<<<< HEAD
 \begin{DoxyCompactList}\small\item\em Calls glColor3f(rgb\mbox{[}0\mbox{]},rgb\mbox{[}1\mbox{]},rgb\mbox{[}2\mbox{]});. \item\end{DoxyCompactList}\item 
 \hypertarget{classColor_ac1fcaeadc6072c342bd6b8b81bfed000}{
 void \hyperlink{classColor_ac1fcaeadc6072c342bd6b8b81bfed000}{setColor} (float r, float g, float b)}
 \label{classColor_ac1fcaeadc6072c342bd6b8b81bfed000}
 
 \begin{DoxyCompactList}\small\item\em Sets r, g, b as the colors of the current \hyperlink{classColor}{Color} object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+=======
+\begin{DoxyCompactList}\small\item\em Calls glColor3f(rgb\mbox{[}0\mbox{]},rgb\mbox{[}1\mbox{]},rgb\mbox{[}2\mbox{]});. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,6 +51,12 @@ float {\bfseries rgb} \mbox{[}3\mbox{]}}
 \end{DoxyCompactItemize}
 
 
+<<<<<<< HEAD
+=======
+\subsection{Detailed Description}
+\hyperlink{classColor}{Color} A class that has an array of size three, holding the r, g, b details of the \hyperlink{classColor}{Color} object. 
+
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
 \hyperlink{classes_8h}{classes.h}\end{DoxyCompactItemize}

@@ -49,7 +49,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="memlist"><td><a class="el" href="classColor.html#a1cf39cdb0f05d4ad3548973c3b5957b5">get</a>(char color)</td><td><a class="el" href="classColor.html">Color</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>rgb</b> (defined in <a class="el" href="classColor.html">Color</a>)</td><td><a class="el" href="classColor.html">Color</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classColor.html#a4dabfcb970d79805cad2fa59a2ca839d">set</a>()</td><td><a class="el" href="classColor.html">Color</a></td><td><code> [inline]</code></td></tr>
+<<<<<<< HEAD
   <tr class="memlist"><td><a class="el" href="classColor.html#ac1fcaeadc6072c342bd6b8b81bfed000">setColor</a>(float r, float g, float b)</td><td><a class="el" href="classColor.html">Color</a></td><td><code> [inline]</code></td></tr>
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </table></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -65,7 +68,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -5,8 +5,11 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+<<<<<<< HEAD
 struct \hyperlink{structarea}{area}
 \item 
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 class \hyperlink{classColor}{Color}
 \item 
 class \hyperlink{classPoint}{Point}
@@ -15,6 +18,7 @@ class \hyperlink{classOperations}{Operations}
 \item 
 class \hyperlink{classLine}{Line}
 \item 
+<<<<<<< HEAD
 class \hyperlink{classFillLine}{FillLine}
 \item 
 class \hyperlink{classRectangle}{Rectangle}
@@ -46,6 +50,13 @@ vector$<$ \hyperlink{structarea}{Area} $>$ {\bfseries areas}}
 \hyperlink{classColor}{Color} {\bfseries uicolors} \mbox{[}6\mbox{]}}
 \label{classes_8h_a1fbdf6fb8a434012ef6e26b44863b858}
 
+=======
+class \hyperlink{classCircle}{Circle}
+\item 
+class \hyperlink{classdatareader}{datareader}
+\item 
+class \hyperlink{classGraph}{Graph}
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 \end{DoxyCompactItemize}
 
 

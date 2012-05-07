@@ -49,22 +49,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="classLine-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<<<<<<< HEAD
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc13c9d43658fbaa9dd10e609812e257"></a><!-- doxytag: member="Line::Line" ref="acc13c9d43658fbaa9dd10e609812e257" args="(Point from, Point to, float t=1.0f)" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#acc13c9d43658fbaa9dd10e609812e257">Line</a> (<a class="el" href="classPoint.html">Point</a> from, <a class="el" href="classPoint.html">Point</a> to, float t=1.0f)</td></tr>
+=======
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f2db972115aec98f4b69c1182fc923c"></a><!-- doxytag: member="Line::Line" ref="a3f2db972115aec98f4b69c1182fc923c" args="(Point from, Point to)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a3f2db972115aec98f4b69c1182fc923c">Line</a> (<a class="el" href="classPoint.html">Point</a> from, <a class="el" href="classPoint.html">Point</a> to)</td></tr>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor - Takes two <a class="el" href="classPoint.html">Point</a> objects from and to. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc11b8a429d8cdd63ba6803dff5602b3"></a><!-- doxytag: member="Line::Line" ref="acc11b8a429d8cdd63ba6803dff5602b3" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#acc11b8a429d8cdd63ba6803dff5602b3">Line</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Empty Constructor. <br/></td></tr>
+<<<<<<< HEAD
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabe85f48d22d92b62257091f48174fac"></a><!-- doxytag: member="Line::~Line" ref="aabe85f48d22d92b62257091f48174fac" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#aabe85f48d22d92b62257091f48174fac">~Line</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">and destructor. Phew! <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bc53a1abc2fbc62a086c8f779e2728c"></a><!-- doxytag: member="Line::Line" ref="a9bc53a1abc2fbc62a086c8f779e2728c" args="(Point from, Point to, Color c, float t=1.0f)" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a9bc53a1abc2fbc62a086c8f779e2728c">Line</a> (<a class="el" href="classPoint.html">Point</a> from, <a class="el" href="classPoint.html">Point</a> to, <a class="el" href="classColor.html">Color</a> c, float t=1.0f)</td></tr>
+=======
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6cb6a1afa3c3e6e4d7ea540493b2b04c"></a><!-- doxytag: member="Line::Line" ref="a6cb6a1afa3c3e6e4d7ea540493b2b04c" args="(Point from, Point to, Color c)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a6cb6a1afa3c3e6e4d7ea540493b2b04c">Line</a> (<a class="el" href="classPoint.html">Point</a> from, <a class="el" href="classPoint.html">Point</a> to, <a class="el" href="classColor.html">Color</a> c)</td></tr>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor - Takes two point objects from and to, and a <a class="el" href="classColor.html">Color</a> object. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab65c33d2958f31c95e08e872ba5d42c0"></a><!-- doxytag: member="Line::getPoint" ref="ab65c33d2958f31c95e08e872ba5d42c0" args="(int index)" -->
 <a class="el" href="classPoint.html">Point</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ab65c33d2958f31c95e08e872ba5d42c0">getPoint</a> (int index)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a <a class="el" href="classPoint.html">Point</a> - one of the from and two. Pass an int - 0 for 'from' and nonzero for 'to'. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf48f46c29bb4b7d2d3c45f5714f6d85"></a><!-- doxytag: member="Line::setPoints" ref="adf48f46c29bb4b7d2d3c45f5714f6d85" args="(Point p1, Point p2)" -->
+<<<<<<< HEAD
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#adf48f46c29bb4b7d2d3c45f5714f6d85">setPoints</a> (<a class="el" href="classPoint.html">Point</a> p1, <a class="el" href="classPoint.html">Point</a> p2)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">changes the start and end to some other point. Useful to avoaoid creating new line objects for no reason. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6265993bf5acbc28830181c3e712f10"></a><!-- doxytag: member="Line::draw" ref="ab6265993bf5acbc28830181c3e712f10" args="()" -->
@@ -92,6 +103,30 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97d2192cc259a0513d60b5d170d75788"></a><!-- doxytag: member="Line::thickness" ref="a97d2192cc259a0513d60b5d170d75788" args="" -->
 float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a97d2192cc259a0513d60b5d170d75788">thickness</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Thickness. Mother of God, this is not working! <br/></td></tr>
+=======
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPoints</b> (<a class="el" href="classPoint.html">Point</a> p1, <a class="el" href="classPoint.html">Point</a> p2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6265993bf5acbc28830181c3e712f10"></a><!-- doxytag: member="Line::draw" ref="ab6265993bf5acbc28830181c3e712f10" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ab6265993bf5acbc28830181c3e712f10">draw</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws the line itself using <a class="el" href="classOperations.html#a8657f54e02cac774a488d6e8731c5986" title="The generic bresenham. Works for any slope, any angle, anything!">Operations::bresenham</a>. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf2e027e417d3a1e3b42a36138ae3bfa"></a><!-- doxytag: member="Line::setThickness" ref="abf2e027e417d3a1e3b42a36138ae3bfa" args="(int th)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#abf2e027e417d3a1e3b42a36138ae3bfa">setThickness</a> (int th)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets the thickness of the line <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4895d295a063bc854b8a015e63b18db6"></a><!-- doxytag: member="Line::incThickness" ref="a4895d295a063bc854b8a015e63b18db6" args="(int th)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a4895d295a063bc854b8a015e63b18db6">incThickness</a> (int th)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">increases thickness <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0622d97055421701a58f15cbc149f15"></a><!-- doxytag: member="Line::decThickness" ref="ad0622d97055421701a58f15cbc149f15" args="(int th)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ad0622d97055421701a58f15cbc149f15">decThickness</a> (int th)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">decreases thickness <br/></td></tr>
+<tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab25ae45978586dbe4c329e917bbfdf1b"></a><!-- doxytag: member="Line::a" ref="ab25ae45978586dbe4c329e917bbfdf1b" args="" -->
+<a class="el" href="classPoint.html">Point</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>a</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea716819f6f2713e6ef5e3b62290bb52"></a><!-- doxytag: member="Line::b" ref="aea716819f6f2713e6ef5e3b62290bb52" args="" -->
+<a class="el" href="classPoint.html">Point</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>b</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab43d551232869437084b5905b7a53798"></a><!-- doxytag: member="Line::color" ref="ab43d551232869437084b5905b7a53798" args="" -->
+<a class="el" href="classColor.html">Color</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>color</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6100557924ecaf1efb0575ff496147f9"></a><!-- doxytag: member="Line::thickness" ref="a6100557924ecaf1efb0575ff496147f9" args="" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><b>thickness</b></td></tr>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p><a class="el" href="classLine.html">Line</a> class: Implements all the functionalities required for a line. Various types of constructors, own color, etc </p>
@@ -113,7 +148,11 @@ float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

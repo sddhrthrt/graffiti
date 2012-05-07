@@ -44,6 +44,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>Color Class Reference</h1><!-- doxytag: class="Color" -->
+<<<<<<< HEAD
+=======
+<p><code>#include &lt;<a class="el" href="classes_8h_source.html">classes.h</a>&gt;</code></p>
+
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <p><a href="classColor-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
@@ -58,13 +63,21 @@ float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dabfcb970d79805cad2fa59a2ca839d"></a><!-- doxytag: member="Color::set" ref="a4dabfcb970d79805cad2fa59a2ca839d" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classColor.html#a4dabfcb970d79805cad2fa59a2ca839d">set</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calls glColor3f(rgb[0],rgb[1],rgb[2]);. <br/></td></tr>
+<<<<<<< HEAD
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1fcaeadc6072c342bd6b8b81bfed000"></a><!-- doxytag: member="Color::setColor" ref="ac1fcaeadc6072c342bd6b8b81bfed000" args="(float r, float g, float b)" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classColor.html#ac1fcaeadc6072c342bd6b8b81bfed000">setColor</a> (float r, float g, float b)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets r, g, b as the colors of the current <a class="el" href="classColor.html">Color</a> object. <br/></td></tr>
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e66e3284da62fdc299fb701e3ec401c"></a><!-- doxytag: member="Color::rgb" ref="a4e66e3284da62fdc299fb701e3ec401c" args="[3]" -->
 float&nbsp;</td><td class="memItemRight" valign="bottom"><b>rgb</b> [3]</td></tr>
 </table>
+<<<<<<< HEAD
+=======
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><a class="el" href="classColor.html">Color</a> A class that has an array of size three, holding the r, g, b details of the <a class="el" href="classColor.html">Color</a> object. </p>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="classes_8h_source.html">classes.h</a></li>
 </ul>
@@ -83,7 +96,11 @@ float&nbsp;</td><td class="memItemRight" valign="bottom"><b>rgb</b> [3]</td></tr
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

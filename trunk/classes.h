@@ -7,6 +7,7 @@
 /// Color
 /// A class that has an array of size three, holding the r, g, b details of the Color object. 
 /// 
+<<<<<<< HEAD
 ofstream segfile;
 
 struct area {
@@ -16,6 +17,10 @@ struct area {
 typedef struct area Area;
 vector<Area> areas;
 
+=======
+vector<void* > rows(2000);
+vector< vector<void*> > segfile(2000, rows);
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 class Color{
 	public:
 		float rgb[3];
@@ -145,8 +150,11 @@ class Point {
  * create an object of that particular class.
  */
 class Operations {
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 	public:
 	/// takes no arguments as of now, sets the pallete[] to various colors. In future, should be configured to take  array of colors and set the values of the array as the colors for palletes. 
 	static void setPallete(int index){
@@ -315,12 +323,19 @@ class Operations {
 	
 
 	/// The generic bresenham. Works for any slope, any angle, anything!
+<<<<<<< HEAD
 	static void bresenham(Point a, Point b, float thickness=1.0f ){
+=======
+	static void bresenham(Point a, Point b ){
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 		float x0=a.getCoords()[0];
 		float y0=a.getCoords()[1];
 		float x1=b.getCoords()[0];
 		float y1=b.getCoords()[1];
+<<<<<<< HEAD
 		segfile<<1<<" "<<x0<<" "<<y0<<" "<<x1<<" "<<y1<<endl;
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 		//cout<<x0<<","<<y0<<" to "<<x1<<","<<y1<<"\n";
 
 		float INCR=0.00001;
@@ -354,12 +369,20 @@ class Operations {
 
 		float p=tdy-dx;
 		for(int i=0;i<(dx/INCR);i++){
+<<<<<<< HEAD
 			//cout<<(int)(x*unit)<<","<<(int)(y*unit)<<"\n";
 			glBegin(GL_POINTS);
 			glVertex2f(x, y);
 			glEnd();
 
 			if(p<0.1){
+=======
+		//	glPointSize(2.5f);
+			//cout<<(int)(x*unit)<<","<<(int)(y*unit)<<"\n";
+			glVertex2f(x, y);
+
+			if(p<0){
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 				x+=INCRX;
 				p=p+tdy;
 			}
@@ -371,6 +394,7 @@ class Operations {
 		}
 		glPointSize(1.0f);
 	}
+<<<<<<< HEAD
 	
 //clip bresenham starts
 
@@ -406,6 +430,31 @@ class Operations {
 				glVertex2f(x0, y0);
 				glEnd();
 				y0+=INCRY;
+=======
+	/// This function draws a circle at the given Point, and with radius.
+	static void midpointcircle(Point point, float radius){
+		float xx,yy;
+		xx=point.getCoords()[0];
+		yy=point.getCoords()[1];
+		//cout<<xx<<","<<yy<<"\n";
+		float p;
+		float x,y;
+		y=radius;
+		p=(5/4)-radius;
+		for(x=0.0;x<=y;) {
+			glVertex2f(xx+x, yy+y);
+			glVertex2f(xx-x, yy+y);
+			glVertex2f(xx+x, yy-y);
+			glVertex2f(xx-x, yy-y);
+			glVertex2f(xx+y, yy+x);
+			glVertex2f(xx+y, yy-x);
+			glVertex2f(xx-y, yy+x);
+			glVertex2f(xx-y, yy-x);
+			if(p<0)
+			{
+				x=x+0.0001;
+				p=p+2*x+0.0001;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 			}
 			return;
 		}
@@ -449,8 +498,18 @@ class Operations {
 		cout<<x<<", "<<y<<"\n";
 		return segfile[x][y];
 	}
+<<<<<<< HEAD
 	*/
 
+=======
+	static void addToSegfile(void* ob, int x, int y){
+		segfile[x][y]=ob;
+	}
+	static void* getFromSegfile(int x, int y){
+		cout<<x<<", "<<y<<"\n";
+		return segfile[x][y];
+	}
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 
 };///< Class that holds static functions that implement the basic drawing algorithms.
 /** Line class:
@@ -517,11 +576,15 @@ class Line{
 		/// Draws the line itself using Operations::simple_line.
 		void draw(){
 			color.set();
+<<<<<<< HEAD
 			Operations::simple_line(a, b, thickness);
 		}
 		void clipDraw(){
 			color.set();
 			Operations::clip_simple_line(a,b,xmin,xmax,thickness);
+=======
+			Operations::bresenham(a, b);
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 		}
 		/// sets the thickness of the line - not working
 		void setThickness(float th){
@@ -1068,5 +1131,85 @@ class PrintText{
 		}
 	}
 };
+<<<<<<< HEAD
 			
+=======
+class Graph {
+	public:
+		/// Number of divisions on each axes
+		int x_div, y_div, x_avail, y_avail;
+		/// Labels <<for each axis
+		int* x_labels, y_labels;
+		int drawline;
+		vector<vector<Point> > data;	
+		/// Constructor that takes data, x divisions, y divisions.
+		Graph (){drawline=1;x_div=0;y_div=0;
+		};
+		void setDivisions(int x, int y){
+			x_div=x;
+			y_div=y;
+			cout<<x_div<<","<<y_div<<"\n";
+		}
+		int getDivisions(int index){
+			if(!index){
+				return x_div;
+			}
+			else{
+				return y_div;
+			}
+		}
+		void read(){
+			datareader d1;
+			d1.read();
+			data.push_back( d1.getTotals() );
+		}			
+			
+		/// Test drawing function.
+		void plot(){
+			Point origin (0.5f, 0.5f);
+			Point x_end (X-0.5f, 0.5f);
+			Point y_end (0.5f, Y-0.5f);
+			Line x_axis (origin, x_end);
+			Line y_axis (origin, y_end);
+			x_axis.setThickness(7);
+			y_axis.setThickness(6);
+			x_axis.draw();
+			y_axis.draw();
+			vector<vector<Point> >::iterator i;
+			vector<Point>::iterator j;
+			for(i=data.begin(); i!=data.end();i++){
+				int size_x=i->size();
+				float scale_x;
+				if(!x_div) scale_x=(X-0.5f)/size_x;
+				else scale_x=(X-0.5f)/x_div;
+
+				for(j=i->begin();j!=i->end();j++){
+					float a=j->getCoords()[0];
+					float b=j->getCoords()[1];
+					int opt=0;
+					if(j!=i->end()){
+						float c=(j+1)->getCoords()[0];
+						float d=(j+1)->getCoords()[1];
+						if(a*scale_x+0.5f < X ){
+							Point p1 (a*scale_x+0.5f, b*Y+0.5f);
+							Point p2 (c*scale_x+0.5f, d*Y+0.5f);
+							//p1.draw();
+							//p2.draw();
+							Circle c (p1, 1.0f);
+							Line l (p1, p2);
+							l.setThickness(100);
+							c.draw();
+							l.draw();
+						}
+					}	
+				}
+			}
+						
+
+
+		}
+
+
+};
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 

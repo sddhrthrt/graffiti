@@ -7,6 +7,7 @@
 <body class="SRPage">
 <div id="SRIndex">
 <div class="SRStatus" id="Loading">Loading...</div>
+<<<<<<< HEAD
 <div class="SRResult" id="SR_b">
  <div class="SREntry">
   <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="javascript:searchResults.Toggle('SR_b')">b</a>
@@ -25,6 +26,11 @@
 <div class="SRResult" id="SR_bresenham">
  <div class="SREntry">
   <a id="Item2" onkeydown="return searchResults.Nav(event,2)" onkeypress="return searchResults.Nav(event,2)" onkeyup="return searchResults.Nav(event,2)" class="SRSymbol" href="../classOperations.html#abc4a84859351c624f24e1f9cd3df7c38" target="_parent">bresenham</a>
+=======
+<div class="SRResult" id="SR_bresenham">
+ <div class="SREntry">
+  <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="../classOperations.html#a8657f54e02cac774a488d6e8731c5986" target="_parent">bresenham</a>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
   <span class="SRScope">Operations</span>
  </div>
 </div>

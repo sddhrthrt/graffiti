@@ -9,6 +9,7 @@
 #include<stdio.h>
 int ww=500, wh = 500;
 float X=50.0f, Y=50.0f ;
+<<<<<<< HEAD
 
 int dragstart_x, dragstart_y, diff_x, diff_y;
 float* var_drag_x, *var_drag_y, dummy;
@@ -51,8 +52,25 @@ void welcomenote(){
 	authors_text.draw();
 	PrintText note_text (note, 3.0f, Y/2-22.0f, 2.4f,pallete[1], 2.0f);
 	note_text.draw();
+=======
+int unit = 10;
+using namespace std;
+#include "classes.h"
+enum representation{ GRAPH, PIE }curr_representation;
+enum states{ CLICK_WAIT, MENU_SELECT, DRAG_BAR, TEXT_ENTER } curr_mode=CLICK_WAIT;
+Graph g ;
+void setval(int x, int y){
+
+}
+void init( void){
+		glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+		glClearDepth(1.0f);
+		glEnable(GL_COLOR_MATERIAL);
+		glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 }
 void display(void){
+<<<<<<< HEAD
 			segfile.seekp(ios::beg);
 			areas.clear();
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -74,6 +92,20 @@ void display(void){
 				case 3:
 				break;
 			}
+=======
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			
+			glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+			glLoadIdentity();
+			//glTranslatef(0.0f, 0.0f, -6.0f);
+			glBegin(GL_POINTS);
+					if(curr_representation==GRAPH){
+						g.plot();
+					}
+					else{
+					}
+			glEnd();
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 			glutSwapBuffers();
 }
 void reshape(int w, int h){
@@ -199,10 +231,17 @@ void keyboard( unsigned char key, int x, int y){
 			exit(0);
 			break;
 		case 'i':
+<<<<<<< HEAD
 			g.zoomInGraph();
 			break;
 		case 'o':
 			g.zoomOutGraph();
+=======
+			g.setDivisions(g.getDivisions(0)-1,0);
+			break;
+		case 'o':
+			g.setDivisions(g.getDivisions(0)+1,0);
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 			break;
 		default:
 			break;
@@ -228,6 +267,7 @@ void arrow_keys( int a_keys, int x, int y){
 	}
 }
 void mouse(int btn, int state, int x, int y){
+<<<<<<< HEAD
 	y=wh-y;
 	if(curr_mode==CLICK_WAIT){
 		
@@ -265,6 +305,11 @@ void mouse(int btn, int state, int x, int y){
 				var_drag_x=&dummy;
 				var_drag_y=&dummy;
 			}
+=======
+	y=(int)Y*unit-y;
+	if(curr_mode=CLICK_WAIT){
+		if(btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 		}
 	}
 	
@@ -289,6 +334,7 @@ void setval(int x, int y){
 }
 
 int main(int argc, char** argv){
+<<<<<<< HEAD
 	segfile.open("segfile", ios::out);
 	g.read();
 	//g2.read();
@@ -297,6 +343,11 @@ int main(int argc, char** argv){
 	curr_mode=MAIN_MENU;
 	var_drag_x=&dummy;
 	var_drag_y=&dummy;
+=======
+	curr_representation=GRAPH;
+	g.read();
+	g.setDivisions(10, 0);
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 	glutInit( &argc, argv);
 	init();
 	glutInitDisplayMode( GLUT_RGB | GLUT_DOUBLE);

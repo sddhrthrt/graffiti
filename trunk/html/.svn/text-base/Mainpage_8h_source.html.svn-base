@@ -38,7 +38,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
+<<<<<<< HEAD
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
     </ul>
   </div>
 <h1>Mainpage.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
@@ -57,7 +60,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

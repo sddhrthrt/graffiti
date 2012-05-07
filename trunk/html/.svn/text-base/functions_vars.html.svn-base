@@ -51,6 +51,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 &nbsp;<ul>
+<<<<<<< HEAD
 <li>a
 : <a class="el" href="classLine.html#ab25ae45978586dbe4c329e917bbfdf1b">Line</a>
 , <a class="el" href="classRectangle.html#a01d642ab38c13839f5223f4e4d522348">Rectangle</a>
@@ -98,6 +99,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>x_labels
 : <a class="el" href="classGraph__Environment.html#aa4c710c4ebe73536ecb3b426a7614b3e">Graph_Environment</a>
+=======
+<li>x_div
+: <a class="el" href="classGraph.html#afe133cc33b87353c3214cc87ed4e13a1">Graph</a>
+</li>
+<li>x_labels
+: <a class="el" href="classGraph.html#ac3b302755470c4a41222a02d2316d659">Graph</a>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </li>
 </ul>
 </div>
@@ -115,7 +123,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

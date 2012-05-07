@@ -19,6 +19,7 @@ void \hyperlink{classPoint_abcfe0f37e59c9a90e0c8997ebd0cd788}{setCoords} (float 
 \label{classPoint_abcfe0f37e59c9a90e0c8997ebd0cd788}
 
 \begin{DoxyCompactList}\small\item\em call it with three arguments to set the coordinates of a point. \item\end{DoxyCompactList}\item 
+<<<<<<< HEAD
 \hypertarget{classPoint_a0b3b779a6a55d26f44d51cf5cbb4a571}{
 void {\bfseries setThickness} (float x)}
 \label{classPoint_a0b3b779a6a55d26f44d51cf5cbb4a571}
@@ -34,6 +35,8 @@ void \hyperlink{classPoint_a05b275095eb888843c4238589f015941}{setCoords} (float 
 \label{classPoint_ad92f2337b839a94ce97dcdb439b4325a}
 
 \begin{DoxyCompactList}\small\item\em General constructors and destructors, empty. \item\end{DoxyCompactList}\item 
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 \hypertarget{classPoint_a405838cb39b8fb6119633d9ba7e6b4fb}{
 \hyperlink{classPoint_a405838cb39b8fb6119633d9ba7e6b4fb}{Point} (float x, float y, float z)}
 \label{classPoint_a405838cb39b8fb6119633d9ba7e6b4fb}
@@ -63,16 +66,25 @@ void \hyperlink{classPoint_a59a92024c795154f9c6928862f368e6a}{draw} ()}
 void \hyperlink{classPoint_a062852166797c5e5c62e0ce9a32f4057}{scale} (float x\_\-factor, float y\_\-factor)}
 \label{classPoint_a062852166797c5e5c62e0ce9a32f4057}
 
+<<<<<<< HEAD
 \begin{DoxyCompactList}\small\item\em multiply the point's x, y coordinates by a particular scale. Helpful in Graph, i think. Takes two arguments, x\_\-scale, y\_\-scale. Remember, multiplies. \item\end{DoxyCompactList}\item 
+=======
+\begin{DoxyCompactList}\small\item\em multiply the point's x, y coordinates by a particular scale. Helpful in \hyperlink{classGraph}{Graph}, i think. Takes two arguments, x\_\-scale, y\_\-scale. Remember, multiplies. \item\end{DoxyCompactList}\item 
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 \hypertarget{classPoint_ade07f02f5a66f90324202435b897dc63}{
 void \hyperlink{classPoint_ade07f02f5a66f90324202435b897dc63}{scale} (float x\_\-factor, float y\_\-factor, float z\_\-factor)}
 \label{classPoint_ade07f02f5a66f90324202435b897dc63}
 
+<<<<<<< HEAD
 \begin{DoxyCompactList}\small\item\em multiply the point's x, y, z coordinates by a particular scale. Helpful in Graph, i think. Takes three arguments, x\_\-scale, y\_\-scale, z\_\-scale. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+=======
+\begin{DoxyCompactList}\small\item\em multiply the point's x, y, z coordinates by a particular scale. Helpful in \hyperlink{classGraph}{Graph}, i think. Takes three arguments, x\_\-scale, y\_\-scale, z\_\-scale. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classPoint_a13d4c02fe9e260ca3b9f46ff5be9ee3b}{
+<<<<<<< HEAD
 float \hyperlink{classPoint_a13d4c02fe9e260ca3b9f46ff5be9ee3b}{coords} \mbox{[}3\mbox{]}}
 \label{classPoint_a13d4c02fe9e260ca3b9f46ff5be9ee3b}
 
@@ -91,6 +103,21 @@ float \hyperlink{classPoint_ae420250ca4ff8cc21e18b09ed64bc2fd}{thickness}}
 
 \subsection{Detailed Description}
 ! Stores the 3 dimensional coordinates and the color of the particular point. 
+=======
+float {\bfseries coords} \mbox{[}3\mbox{]}}
+\label{classPoint_a13d4c02fe9e260ca3b9f46ff5be9ee3b}
+
+\item 
+\hypertarget{classPoint_acab939461b8419912a164f70467b126f}{
+\hyperlink{classColor}{Color} {\bfseries color}}
+\label{classPoint_acab939461b8419912a164f70467b126f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the 3 dimensional coordinates and the color of the particular point. 
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

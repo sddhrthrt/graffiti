@@ -82,6 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a>00049                         rgb[1]=g;
 <a name="l00050"></a>00050                         rgb[2]=b;
 <a name="l00051"></a>00051                 }
+<<<<<<< HEAD
 <a name="l00052"></a>00052 };
 <a name="l00053"></a>00053 
 <a name="l00054"></a><a class="code" href="classes_8h.html#a71bbacd848c0e832f53b82e1f545f391">00054</a> <a class="code" href="classColor.html">Color</a> <a class="code" href="classes_8h.html#a71bbacd848c0e832f53b82e1f545f391" title="A universal color pallete. Any other place, you can use it by just calling pallete[x]...">pallete</a>[6];
@@ -142,6 +143,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00124"></a>00124                         glVertex3f(<a class="code" href="classPoint.html#a13d4c02fe9e260ca3b9f46ff5be9ee3b" title="stores the x, y, z Coordinates of the points">coords</a>[0], <a class="code" href="classPoint.html#a13d4c02fe9e260ca3b9f46ff5be9ee3b" title="stores the x, y, z Coordinates of the points">coords</a>[1], <a class="code" href="classPoint.html#a13d4c02fe9e260ca3b9f46ff5be9ee3b" title="stores the x, y, z Coordinates of the points">coords</a>[2]);
 <a name="l00125"></a>00125                         glEnd();
 <a name="l00126"></a>00126                         glPointSize(1.0f);
+=======
+<a name="l00053"></a><a class="code" href="classPoint.html#abcfe0f37e59c9a90e0c8997ebd0cd788">00053</a>                 <span class="keywordtype">void</span> <a class="code" href="classPoint.html#abcfe0f37e59c9a90e0c8997ebd0cd788" title="call it with three arguments to set the coordinates of a point.">setCoords</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){
+<a name="l00054"></a>00054                         coords[0]=x;
+<a name="l00055"></a>00055                         coords[1]=y;
+<a name="l00056"></a>00056                         coords[2]=z;
+<a name="l00057"></a>00057                 }
+<a name="l00058"></a>00058                 <a class="code" href="classPoint.html">Point</a>() {coords[0]=0.0f, coords[1]=0.0f,coords[2]=0.0f;};
+<a name="l00060"></a><a class="code" href="classPoint.html#a405838cb39b8fb6119633d9ba7e6b4fb">00060</a>                 <a class="code" href="classPoint.html#a405838cb39b8fb6119633d9ba7e6b4fb" title="Constructor with only coordinates, Color defaults to white.">Point</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){
+<a name="l00061"></a>00061                         coords[0]=x;
+<a name="l00062"></a>00062                         coords[1]=y;
+<a name="l00063"></a>00063                         coords[2]=z;
+<a name="l00064"></a>00064                         <a class="code" href="classColor.html">Color</a> color (0.0f, 0.0f, 0.0f);
+<a name="l00065"></a>00065                 };
+<a name="l00067"></a><a class="code" href="classPoint.html#a30bc8409287de4f43e160664be834636">00067</a>                 <a class="code" href="classPoint.html#a30bc8409287de4f43e160664be834636" title="Constructor with only 2 coordinates and no color, z and color default to 0 and white...">Point</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y){
+<a name="l00068"></a>00068                         coords[0]=x;
+<a name="l00069"></a>00069                         coords[1]=y;
+<a name="l00070"></a>00070                         coords[2]=0.0f;
+<a name="l00071"></a>00071                         <a class="code" href="classColor.html">Color</a> color(0.0f, 0.0f, 0.0f);
+<a name="l00072"></a>00072                 };
+<a name="l00074"></a><a class="code" href="classPoint.html#a523ef8bde3aff206ba69af38ac8f7ae1">00074</a>                 <a class="code" href="classPoint.html#a523ef8bde3aff206ba69af38ac8f7ae1" title="Constructor with 3 Coordinates and Color.">Point</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <a class="code" href="classColor.html">Color</a> c){
+<a name="l00075"></a>00075                         color=c;
+<a name="l00076"></a>00076                         coords[0]=x;
+<a name="l00077"></a>00077                         coords[1]=y;
+<a name="l00078"></a>00078                         coords[2]=z;
+<a name="l00079"></a>00079                 };
+<a name="l00081"></a><a class="code" href="classPoint.html#ae412fd7e0ed49ef9eaf50af195fc5b0d">00081</a>                 <a class="code" href="classPoint.html#ae412fd7e0ed49ef9eaf50af195fc5b0d" title="Construcotor with 2 coordinates and a color. z defaults to 0 again.">Point</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <a class="code" href="classColor.html">Color</a> c){
+<a name="l00082"></a>00082                         coords[0]=x;
+<a name="l00083"></a>00083                         coords[1]=y;
+<a name="l00084"></a>00084                         coords[2]=0;
+<a name="l00085"></a>00085                         color=c;
+<a name="l00086"></a>00086                 };
+<a name="l00088"></a><a class="code" href="classPoint.html#a59a92024c795154f9c6928862f368e6a">00088</a>                 <span class="keywordtype">void</span> <a class="code" href="classPoint.html#a59a92024c795154f9c6928862f368e6a" title="Draws the Point using glVertex3f. No glBegin(GL_POINTS) or glEnd() here.">draw</a>(){
+<a name="l00089"></a>00089                         color.<a class="code" href="classColor.html#a4dabfcb970d79805cad2fa59a2ca839d" title="Calls glColor3f(rgb[0],rgb[1],rgb[2]);.">set</a>();
+<a name="l00090"></a>00090                         glVertex3f(coords[0], coords[1], coords[2]);
+<a name="l00091"></a>00091                 }
+<a name="l00093"></a><a class="code" href="classPoint.html#a062852166797c5e5c62e0ce9a32f4057">00093</a>                 <span class="keywordtype">void</span> <a class="code" href="classPoint.html#a062852166797c5e5c62e0ce9a32f4057" title="multiply the point&amp;#39;s x, y coordinates by a particular scale. Helpful in Graph...">scale</a>(<span class="keywordtype">float</span> x_factor, <span class="keywordtype">float</span> y_factor){
+<a name="l00094"></a>00094                         coords[0]*=x_factor;
+<a name="l00095"></a>00095                         coords[1]*=y_factor;
+<a name="l00096"></a>00096                 }
+<a name="l00098"></a><a class="code" href="classPoint.html#ade07f02f5a66f90324202435b897dc63">00098</a>                 <span class="keywordtype">void</span> <a class="code" href="classPoint.html#ade07f02f5a66f90324202435b897dc63" title="multiply the point&amp;#39;s x, y, z coordinates by a particular scale. Helpful in Graph...">scale</a>(<span class="keywordtype">float</span> x_factor, <span class="keywordtype">float</span> y_factor, <span class="keywordtype">float</span> z_factor){
+<a name="l00099"></a>00099                         coords[0]*=x_factor;
+<a name="l00100"></a>00100                         coords[1]*=y_factor;
+<a name="l00101"></a>00101                         coords[2]*=z_factor;
+<a name="l00102"></a>00102                 }
+<a name="l00103"></a>00103 };
+<a name="l00104"></a>00104 
+<a name="l00108"></a><a class="code" href="classOperations.html">00108</a> <span class="keyword">class </span><a class="code" href="classOperations.html">Operations</a>{
+<a name="l00109"></a>00109         <span class="keyword">public</span>:
+<a name="l00111"></a><a class="code" href="classOperations.html#a8657f54e02cac774a488d6e8731c5986">00111</a>         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classOperations.html#a8657f54e02cac774a488d6e8731c5986" title="The generic bresenham. Works for any slope, any angle, anything!">bresenham</a>(<a class="code" href="classPoint.html">Point</a> a, <a class="code" href="classPoint.html">Point</a> b, <span class="keywordtype">int</span> thickness){
+<a name="l00112"></a>00112                 <span class="keywordtype">float</span> x0=a.<a class="code" href="classPoint.html#ac993bda2df6e53c85a628d21be740d80" title="returns the 3 element float array which contains x, y, z coordinate of the Point">getCoords</a>()[0];
+<a name="l00113"></a>00113                 <span class="keywordtype">float</span> y0=a.<a class="code" href="classPoint.html#ac993bda2df6e53c85a628d21be740d80" title="returns the 3 element float array which contains x, y, z coordinate of the Point">getCoords</a>()[1];
+<a name="l00114"></a>00114                 <span class="keywordtype">float</span> x1=b.<a class="code" href="classPoint.html#ac993bda2df6e53c85a628d21be740d80" title="returns the 3 element float array which contains x, y, z coordinate of the Point">getCoords</a>()[0];
+<a name="l00115"></a>00115                 <span class="keywordtype">float</span> y1=b.<a class="code" href="classPoint.html#ac993bda2df6e53c85a628d21be740d80" title="returns the 3 element float array which contains x, y, z coordinate of the Point">getCoords</a>()[1];
+<a name="l00116"></a>00116                 <span class="keywordtype">float</span> INCR=0.00001;
+<a name="l00117"></a>00117                 <span class="keywordtype">float</span> INCRX=0.00001;
+<a name="l00118"></a>00118                 <span class="keywordtype">float</span> INCRY=0.00001;
+<a name="l00119"></a>00119                 <span class="keywordtype">float</span> dx=x1-x0;
+<a name="l00120"></a>00120                 <span class="keywordtype">float</span> dy=y1-y0;
+<a name="l00121"></a>00121                 <span class="keywordtype">float</span> x=x0;
+<a name="l00122"></a>00122                 <span class="keywordtype">float</span> y=y0;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124                 <span class="keywordflow">if</span>(dx&lt;0){
+<a name="l00125"></a>00125                         INCRX=0-INCRX;
+<a name="l00126"></a>00126                         dx=0-dx;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a name="l00127"></a>00127                 }
 <a name="l00129"></a><a class="code" href="classPoint.html#a062852166797c5e5c62e0ce9a32f4057">00129</a>                 <span class="keywordtype">void</span> <a class="code" href="classPoint.html#a062852166797c5e5c62e0ce9a32f4057" title="multiply the point&amp;#39;s x, y coordinates by a particular scale. Helpful in Graph...">scale</a>(<span class="keywordtype">float</span> x_factor, <span class="keywordtype">float</span> y_factor){
 <a name="l00130"></a>00130                         <a class="code" href="classPoint.html#a13d4c02fe9e260ca3b9f46ff5be9ee3b" title="stores the x, y, z Coordinates of the points">coords</a>[0]*=x_factor;
@@ -255,6 +321,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00247"></a>00247                         x0+=INCRX;
 <a name="l00248"></a>00248                         y0+=INCRY;
 <a name="l00249"></a>00249                 }
+<<<<<<< HEAD
 <a name="l00250"></a>00250         }
 <a name="l00251"></a>00251         
 <a name="l00252"></a>00252 
@@ -589,6 +656,155 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00643"></a>00643                 }
 <a name="l00644"></a>00644 };
 <a name="l00645"></a>00645 
+=======
+<a name="l00251"></a><a class="code" href="classLine.html#ad0622d97055421701a58f15cbc149f15">00251</a>                 <span class="keywordtype">void</span> <a class="code" href="classLine.html#ad0622d97055421701a58f15cbc149f15" title="decreases thickness">decThickness</a>(<span class="keywordtype">int</span> th){
+<a name="l00252"></a>00252                         <span class="keywordflow">if</span>(thickness&gt;0){
+<a name="l00253"></a>00253                                 thickness--;
+<a name="l00254"></a>00254                         }
+<a name="l00255"></a>00255                 }
+<a name="l00256"></a>00256 };
+<a name="l00257"></a>00257 
+<a name="l00261"></a><a class="code" href="classCircle.html">00261</a> <span class="keyword">class </span><a class="code" href="classCircle.html">Circle</a>{
+<a name="l00262"></a>00262         <span class="keyword">public</span>:
+<a name="l00263"></a>00263                 <a class="code" href="classPoint.html">Point</a> centre;
+<a name="l00264"></a>00264                 <a class="code" href="classColor.html">Color</a> c;
+<a name="l00265"></a>00265                 <span class="keywordtype">int</span> state;
+<a name="l00266"></a>00266                 <span class="keywordtype">float</span> radius;
+<a name="l00268"></a><a class="code" href="classCircle.html#adb820287611a49de7062173b1c2993a5">00268</a>                 <a class="code" href="classCircle.html#adb820287611a49de7062173b1c2993a5" title="Constructor that takes only a Point and a radius.">Circle</a>(<a class="code" href="classPoint.html">Point</a> p, <span class="keywordtype">float</span> r){
+<a name="l00269"></a>00269                         <a class="code" href="classColor.html">Color</a> c (0.0f, 0.0f, 0.0f);
+<a name="l00270"></a>00270                         radius=r;
+<a name="l00271"></a>00271                         centre=p;
+<a name="l00272"></a>00272                 };
+<a name="l00274"></a><a class="code" href="classCircle.html#a84f9ef0dd7c314d82059a7966eb055e1">00274</a>                 <a class="code" href="classCircle.html#a84f9ef0dd7c314d82059a7966eb055e1" title="Constructor that takes a Point, a radius, a Color.">Circle</a>(<a class="code" href="classPoint.html">Point</a> p, <span class="keywordtype">float</span> r, <a class="code" href="classColor.html">Color</a> color){
+<a name="l00275"></a>00275                         c=color;
+<a name="l00276"></a>00276                 radius=r;
+<a name="l00277"></a>00277                         centre=p;
+<a name="l00278"></a>00278                 };
+<a name="l00280"></a><a class="code" href="classCircle.html#a4b389af47e8bd2949e5fda32fd92cbbf">00280</a>                 <a class="code" href="classPoint.html">Point</a> <a class="code" href="classCircle.html#a4b389af47e8bd2949e5fda32fd92cbbf" title="returns Point.">getCentre</a>(){
+<a name="l00281"></a>00281                         <span class="keywordflow">return</span> centre;
+<a name="l00282"></a>00282                 };
+<a name="l00284"></a><a class="code" href="classCircle.html#a3a3f7166e7f629e44f9044b0e537eb22">00284</a>                 <span class="keywordtype">void</span> <a class="code" href="classCircle.html#a3a3f7166e7f629e44f9044b0e537eb22" title="calls midpointcircle() function to draw itself.">draw</a>(){
+<a name="l00285"></a>00285                         c.<a class="code" href="classColor.html#a4dabfcb970d79805cad2fa59a2ca839d" title="Calls glColor3f(rgb[0],rgb[1],rgb[2]);.">set</a>();
+<a name="l00286"></a>00286                         <a class="code" href="classOperations.html#a4596a2e2e90f52ef99fcbb768c14ca04" title="This function draws a circle at the given Point, and with radius.">Operations::midpointcircle</a>(centre, radius);
+<a name="l00287"></a>00287                 }
+<a name="l00288"></a>00288 };
+<a name="l00292"></a><a class="code" href="classdatareader.html">00292</a> <span class="keyword">class </span><a class="code" href="classdatareader.html">datareader</a>{
+<a name="l00293"></a>00293         vector&lt;vector&lt;Point&gt; &gt; allyears;
+<a name="l00294"></a>00294         vector&lt;Point&gt; totals;
+<a name="l00295"></a>00295         <span class="keywordtype">int</span> year, c, y, count;
+<a name="l00296"></a>00296         <span class="keywordtype">int</span> years[50];
+<a name="l00297"></a>00297         <span class="keywordtype">float</span> ymax,ymin,value[250],mean[50],total[50];
+<a name="l00298"></a>00298         <span class="keyword">public</span>:
+<a name="l00299"></a>00299                 <a class="code" href="classdatareader.html">datareader</a> () {year;c=0;y=0;count=0;};
+<a name="l00300"></a>00300                 vector&lt;vector&lt;Point&gt; &gt; getInput(){
+<a name="l00301"></a>00301                         <span class="keywordflow">return</span> allyears;
+<a name="l00302"></a>00302                 }
+<a name="l00303"></a>00303                 vector&lt;Point&gt; getTotals(){
+<a name="l00304"></a>00304                         <span class="keywordflow">return</span> totals;
+<a name="l00305"></a>00305                 }
+<a name="l00306"></a>00306                 <span class="keywordtype">void</span> read(){
+<a name="l00307"></a>00307                         ymax=0;
+<a name="l00308"></a>00308                         ymin=0;
+<a name="l00309"></a>00309                         <span class="keywordtype">float</span> totalmax=0;
+<a name="l00310"></a>00310                         <span class="keywordtype">float</span> yvalue;
+<a name="l00311"></a>00311                         scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;count);
+<a name="l00312"></a>00312                         <span class="keywordflow">for</span>(y=0;y&lt;count;y++){
+<a name="l00313"></a>00313                                 years[y]=0;
+<a name="l00314"></a>00314                         }
+<a name="l00315"></a>00315                         <span class="keywordflow">for</span>(y=0;y&lt;count;y++){
+<a name="l00316"></a>00316                                 scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;year);
+<a name="l00317"></a>00317                                 years[year-1960]=1;
+<a name="l00318"></a>00318                         }
+<a name="l00319"></a>00319                         <span class="keywordflow">for</span>(y=0;y&lt;count;y++)
+<a name="l00320"></a>00320                         {
+<a name="l00321"></a>00321                                 <span class="keywordflow">if</span>(years[y]){
+<a name="l00322"></a>00322                                         vector &lt;Point&gt; input;
+<a name="l00323"></a>00323                                         <span class="keywordflow">for</span>(c=0;c&lt;244;c++)
+<a name="l00324"></a>00324                                         {
+<a name="l00325"></a>00325                                                 scanf(<span class="stringliteral">&quot;%f&quot;</span>,&amp;yvalue);
+<a name="l00326"></a>00326                                                 <span class="keywordflow">if</span>(c==0){
+<a name="l00327"></a>00327                                                         ymin=yvalue;
+<a name="l00328"></a>00328                                                         total[y]=yvalue;
+<a name="l00329"></a>00329                                                 }
+<a name="l00330"></a>00330                                                 <span class="keywordflow">else</span>{
+<a name="l00331"></a>00331                                                         <span class="keywordflow">if</span>(yvalue&lt;ymin)
+<a name="l00332"></a>00332                                                                 ymin=yvalue;
+<a name="l00333"></a>00333                                                         total[y]+=yvalue;
+<a name="l00334"></a>00334                                                 }
+<a name="l00335"></a>00335                                                 <span class="keywordflow">if</span>(yvalue&gt;ymax)
+<a name="l00336"></a>00336                                                 ymax=yvalue;
+<a name="l00337"></a>00337                                                 <a class="code" href="classPoint.html">Point</a> p ((<span class="keywordtype">float</span>)c, yvalue);
+<a name="l00338"></a>00338                                                 input.push_back(p);
+<a name="l00339"></a>00339                                         }
+<a name="l00340"></a>00340                                 allyears.push_back(input);
+<a name="l00341"></a>00341                                 <span class="keywordflow">if</span>(y==0)
+<a name="l00342"></a>00342                                         totalmax=total[y];
+<a name="l00343"></a>00343                                 <span class="keywordflow">else</span> {
+<a name="l00344"></a>00344                                         <span class="keywordflow">if</span>(totalmax&lt;total[y]){
+<a name="l00345"></a>00345                                                 totalmax=total[y];
+<a name="l00346"></a>00346                                         }
+<a name="l00347"></a>00347                                 }
+<a name="l00348"></a>00348                                 
+<a name="l00349"></a>00349                         <span class="comment">//      std::cout&lt;&lt;mean[y]&lt;&lt;&quot;\n&quot;;       </span>
+<a name="l00350"></a>00350                                 }
+<a name="l00351"></a>00351                         }
+<a name="l00352"></a>00352                         <span class="keywordflow">for</span>(y=0;y&lt;count;y++){
+<a name="l00353"></a>00353                                 total[y]=total[y]/totalmax;
+<a name="l00354"></a>00354                                 <a class="code" href="classPoint.html">Point</a> tot ((<span class="keywordtype">float</span>)y, total[y]);
+<a name="l00355"></a>00355                                 totals.push_back( tot);
+<a name="l00356"></a>00356                                 mean[y]=total[y]/(float)244;
+<a name="l00357"></a>00357                         }
+<a name="l00358"></a>00358                 }
+<a name="l00359"></a>00359 };
+<a name="l00360"></a><a class="code" href="classGraph.html">00360</a> <span class="keyword">class </span><a class="code" href="classGraph.html">Graph</a>{
+<a name="l00361"></a>00361         <span class="keyword">public</span>:
+<a name="l00363"></a><a class="code" href="classGraph.html#afe133cc33b87353c3214cc87ed4e13a1">00363</a>                 <span class="keywordtype">int</span> <a class="code" href="classGraph.html#afe133cc33b87353c3214cc87ed4e13a1" title="Number of divisions on each axes.">x_div</a>, y_div, x_avail, y_avail;
+<a name="l00365"></a><a class="code" href="classGraph.html#ac3b302755470c4a41222a02d2316d659">00365</a>                 <span class="keywordtype">int</span>* <a class="code" href="classGraph.html#ac3b302755470c4a41222a02d2316d659" title="Labels &amp;lt;&amp;lt;for each axis.">x_labels</a>, y_labels;
+<a name="l00366"></a>00366                 <span class="keywordtype">int</span> drawline;
+<a name="l00367"></a>00367                 vector&lt;vector&lt;Point&gt; &gt; data;    
+<a name="l00369"></a><a class="code" href="classGraph.html#ae4c72b8ac4d693c49800a4c7e273654f">00369</a>                 <a class="code" href="classGraph.html#ae4c72b8ac4d693c49800a4c7e273654f" title="Constructor that takes data, x divisions, y divisions.">Graph</a> (){drawline=1;
+<a name="l00370"></a>00370                 };
+<a name="l00371"></a>00371                 <span class="keywordtype">void</span> read(){
+<a name="l00372"></a>00372                         <a class="code" href="classdatareader.html">datareader</a> d1;
+<a name="l00373"></a>00373                         d1.read();
+<a name="l00374"></a>00374                         data.push_back( d1.getTotals() );
+<a name="l00375"></a>00375                 }                       
+<a name="l00376"></a>00376                         
+<a name="l00378"></a><a class="code" href="classGraph.html#a397e6e5732512984591030d633971ba5">00378</a>                 <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a397e6e5732512984591030d633971ba5" title="Test drawing function.">plot</a>(){
+<a name="l00379"></a>00379                         <a class="code" href="classPoint.html">Point</a> origin (0.5f, 0.5f);
+<a name="l00380"></a>00380                         <a class="code" href="classPoint.html">Point</a> x_end (X-0.5f, 0.5f);
+<a name="l00381"></a>00381                         <a class="code" href="classPoint.html">Point</a> y_end (0.5f, Y-0.5f);
+<a name="l00382"></a>00382                         <a class="code" href="classLine.html">Line</a> x_axis (origin, x_end);
+<a name="l00383"></a>00383                         <a class="code" href="classLine.html">Line</a> y_axis (origin, y_end);
+<a name="l00384"></a>00384                         x_axis.<a class="code" href="classLine.html#abf2e027e417d3a1e3b42a36138ae3bfa" title="sets the thickness of the line">setThickness</a>(10);
+<a name="l00385"></a>00385                         x_axis.<a class="code" href="classLine.html#ab6265993bf5acbc28830181c3e712f10" title="Draws the line itself using Operations::bresenham.">draw</a>();
+<a name="l00386"></a>00386                         y_axis.<a class="code" href="classLine.html#ab6265993bf5acbc28830181c3e712f10" title="Draws the line itself using Operations::bresenham.">draw</a>();
+<a name="l00387"></a>00387                         vector&lt;vector&lt;Point&gt; &gt;::iterator i;
+<a name="l00388"></a>00388                         vector&lt;Point&gt;::iterator j;
+<a name="l00389"></a>00389                         <span class="keywordflow">for</span>(i=data.begin(); i!=data.end();i++){
+<a name="l00390"></a>00390                                 <span class="keywordflow">for</span>(j=i-&gt;begin();j!=i-&gt;end();j++){
+<a name="l00391"></a>00391                                         <span class="keywordtype">float</span> a=j-&gt;getCoords()[0];
+<a name="l00392"></a>00392                                         <span class="keywordtype">float</span> b=j-&gt;getCoords()[1];
+<a name="l00393"></a>00393                                         glVertex2f(a+0.5f, b*Y+0.5f);
+<a name="l00394"></a>00394                                         <span class="keywordflow">if</span>(j!=i-&gt;end()){
+<a name="l00395"></a>00395                                                 <span class="keywordtype">float</span> c=(j+1)-&gt;getCoords()[0];
+<a name="l00396"></a>00396                                                 <span class="keywordtype">float</span> d=(j+1)-&gt;getCoords()[1];
+<a name="l00397"></a>00397                                                 <a class="code" href="classPoint.html">Point</a> p1 (a+0.5f, b*Y+0.5f);
+<a name="l00398"></a>00398                                                 <a class="code" href="classPoint.html">Point</a> p2 (c+0.5f, d*Y+0.5f);
+<a name="l00399"></a>00399                                                 <a class="code" href="classLine.html">Line</a> l (p1, p2);
+<a name="l00400"></a>00400                                                 l.<a class="code" href="classLine.html#ab6265993bf5acbc28830181c3e712f10" title="Draws the line itself using Operations::bresenham.">draw</a>();
+<a name="l00401"></a>00401                                         }       
+<a name="l00402"></a>00402                                 }
+<a name="l00403"></a>00403                         }
+<a name="l00404"></a>00404                                                 
+<a name="l00405"></a>00405 
+<a name="l00406"></a>00406 
+<a name="l00407"></a>00407                         
+<a name="l00408"></a>00408                 }
+<a name="l00409"></a>00409 
+<a name="l00410"></a>00410 };
+<a name="l00411"></a>00411 
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -604,7 +820,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

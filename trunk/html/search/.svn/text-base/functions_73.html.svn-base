@@ -22,6 +22,7 @@
   <span class="SRScope">Color</span>
  </div>
 </div>
+<<<<<<< HEAD
 <div class="SRResult" id="SR_setborder">
  <div class="SREntry">
   <a id="Item2" onkeydown="return searchResults.Nav(event,2)" onkeypress="return searchResults.Nav(event,2)" onkeyup="return searchResults.Nav(event,2)" class="SRSymbol" href="../classGraph__Environment.html#aee5f1e13184724fe0b6989be013831fd" target="_parent">setBorder</a>
@@ -57,10 +58,17 @@
     <a id="Item6_c1" onkeydown="return searchResults.NavChild(event,6,1)" onkeypress="return searchResults.NavChild(event,6,1)" onkeyup="return searchResults.NavChild(event,6,1)" class="SRScope" href="../classFillLine.html#a54261275f194ad212502d07e5ba6811a" target="_parent">FillLine::setPoints()</a>
     <a id="Item6_c2" onkeydown="return searchResults.NavChild(event,6,2)" onkeypress="return searchResults.NavChild(event,6,2)" onkeyup="return searchResults.NavChild(event,6,2)" class="SRScope" href="../classRectangle.html#a50cc48c57eaae5d7f40603d0811d76c2" target="_parent">Rectangle::setPoints()</a>
   </div>
+=======
+<div class="SRResult" id="SR_setcoords">
+ <div class="SREntry">
+  <a id="Item2" onkeydown="return searchResults.Nav(event,2)" onkeypress="return searchResults.Nav(event,2)" onkeyup="return searchResults.Nav(event,2)" class="SRSymbol" href="../classPoint.html#abcfe0f37e59c9a90e0c8997ebd0cd788" target="_parent">setCoords</a>
+  <span class="SRScope">Point</span>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
  </div>
 </div>
 <div class="SRResult" id="SR_setthickness">
  <div class="SREntry">
+<<<<<<< HEAD
   <a id="Item7" onkeydown="return searchResults.Nav(event,7)" onkeypress="return searchResults.Nav(event,7)" onkeyup="return searchResults.Nav(event,7)" class="SRSymbol" href="../classLine.html#aa91e6539c1228b247d0262cdeb82f28e" target="_parent">setThickness</a>
   <span class="SRScope">Line</span>
  </div>
@@ -77,6 +85,12 @@
   <span class="SRScope">Operations</span>
  </div>
 </div>
+=======
+  <a id="Item3" onkeydown="return searchResults.Nav(event,3)" onkeypress="return searchResults.Nav(event,3)" onkeyup="return searchResults.Nav(event,3)" class="SRSymbol" href="../classLine.html#abf2e027e417d3a1e3b42a36138ae3bfa" target="_parent">setThickness</a>
+  <span class="SRScope">Line</span>
+ </div>
+</div>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <div class="SRStatus" id="Searching">Searching...</div>
 <div class="SRStatus" id="NoMatches">No Matches</div>
 <script type="text/javascript"><!--

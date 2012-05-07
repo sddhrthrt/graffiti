@@ -7,9 +7,15 @@
 <body class="SRPage">
 <div id="SRIndex">
 <div class="SRStatus" id="Loading">Loading...</div>
+<<<<<<< HEAD
 <div class="SRResult" id="SR_graph_5fenvironment">
  <div class="SREntry">
   <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="../classGraph__Environment.html" target="_parent">Graph_Environment</a>
+=======
+<div class="SRResult" id="SR_graph">
+ <div class="SREntry">
+  <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="../classGraph.html" target="_parent">Graph</a>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
  </div>
 </div>
 <div class="SRStatus" id="Searching">Searching...</div>

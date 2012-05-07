@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
     </ul>
   </div>
+<<<<<<< HEAD
   <div class="tabs">
     <ul>
       <li><a href="#index_b"><span>b</span></a></li>
@@ -80,10 +81,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_c">- c -</a></h3><ul>
 <li>Circle()
 : <a class="el" href="classCircle.html#a51a1174f8b51cfbd64cda35b1dc9cfa2">Circle</a>
+=======
+</div>
+<div class="contents">
+&nbsp;<ul>
+<li>bresenham()
+: <a class="el" href="classOperations.html#a8657f54e02cac774a488d6e8731c5986">Operations</a>
+</li>
+<li>Circle()
+: <a class="el" href="classCircle.html#adb820287611a49de7062173b1c2993a5">Circle</a>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </li>
 <li>Color()
 : <a class="el" href="classColor.html#a9a742cbe9f9f4037f5d9f4e81a9b2428">Color</a>
 </li>
+<<<<<<< HEAD
 </ul>
 
 
@@ -115,12 +127,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getBorder()
 : <a class="el" href="classGraph__Environment.html#af6b78cec834da37d3bf3af121dff88b9">Graph_Environment</a>
 </li>
+=======
+<li>decThickness()
+: <a class="el" href="classLine.html#ad0622d97055421701a58f15cbc149f15">Line</a>
+</li>
+<li>draw()
+: <a class="el" href="classCircle.html#a3a3f7166e7f629e44f9044b0e537eb22">Circle</a>
+, <a class="el" href="classLine.html#ab6265993bf5acbc28830181c3e712f10">Line</a>
+, <a class="el" href="classPoint.html#a59a92024c795154f9c6928862f368e6a">Point</a>
+</li>
+<li>get()
+: <a class="el" href="classColor.html#a1cf39cdb0f05d4ad3548973c3b5957b5">Color</a>
+</li>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <li>getCentre()
 : <a class="el" href="classCircle.html#a4b389af47e8bd2949e5fda32fd92cbbf">Circle</a>
 </li>
 <li>getCoords()
 : <a class="el" href="classPoint.html#ac993bda2df6e53c85a628d21be740d80">Point</a>
 </li>
+<<<<<<< HEAD
 <li>getDivisions()
 : <a class="el" href="classGraph__Environment.html#abbd65011539851db66942b26921c17a2">Graph_Environment</a>
 </li>
@@ -159,10 +185,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_p">- p -</a></h3><ul>
 <li>plot()
 : <a class="el" href="classGraph__Environment.html#af00f048098291e4449050bc4992fb01d">Graph_Environment</a>
+=======
+<li>getPoint()
+: <a class="el" href="classLine.html#ab65c33d2958f31c95e08e872ba5d42c0">Line</a>
+</li>
+<li>Graph()
+: <a class="el" href="classGraph.html#ae4c72b8ac4d693c49800a4c7e273654f">Graph</a>
+</li>
+<li>incThickness()
+: <a class="el" href="classLine.html#a4895d295a063bc854b8a015e63b18db6">Line</a>
+</li>
+<li>Line()
+: <a class="el" href="classLine.html#a3f2db972115aec98f4b69c1182fc923c">Line</a>
+</li>
+<li>midpointcircle()
+: <a class="el" href="classOperations.html#a4596a2e2e90f52ef99fcbb768c14ca04">Operations</a>
+</li>
+<li>plot()
+: <a class="el" href="classGraph.html#a397e6e5732512984591030d633971ba5">Graph</a>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </li>
 <li>Point()
 : <a class="el" href="classPoint.html#ae412fd7e0ed49ef9eaf50af195fc5b0d">Point</a>
 </li>
+<<<<<<< HEAD
 </ul>
 
 
@@ -180,12 +226,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_s">- s -</a></h3><ul>
+=======
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <li>scale()
 : <a class="el" href="classPoint.html#a062852166797c5e5c62e0ce9a32f4057">Point</a>
 </li>
 <li>set()
 : <a class="el" href="classColor.html#a4dabfcb970d79805cad2fa59a2ca839d">Color</a>
 </li>
+<<<<<<< HEAD
 <li>setBorder()
 : <a class="el" href="classGraph__Environment.html#aee5f1e13184724fe0b6989be013831fd">Graph_Environment</a>
 </li>
@@ -235,6 +284,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>~Line()
 : <a class="el" href="classLine.html#aabe85f48d22d92b62257091f48174fac">Line</a>
+=======
+<li>setCoords()
+: <a class="el" href="classPoint.html#abcfe0f37e59c9a90e0c8997ebd0cd788">Point</a>
+</li>
+<li>setThickness()
+: <a class="el" href="classLine.html#abf2e027e417d3a1e3b42a36138ae3bfa">Line</a>
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 </li>
 </ul>
 </div>
@@ -252,7 +308,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<<<<<<< HEAD
 <hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 17 23:40:53 2012 by&nbsp;
+=======
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Apr 3 13:03:27 2012 by&nbsp;
+>>>>>>> 09950c976b5a614a45a67cda2544cee9295383b3
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
