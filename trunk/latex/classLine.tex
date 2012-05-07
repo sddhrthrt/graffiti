@@ -1,0 +1,92 @@
+\hypertarget{classLine}{
+\section{Line Class Reference}
+\label{classLine}\index{Line@{Line}}
+}
+
+
+{\ttfamily \#include $<$classes.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLine_acc13c9d43658fbaa9dd10e609812e257}{
+\hyperlink{classLine_acc13c9d43658fbaa9dd10e609812e257}{Line} (\hyperlink{classPoint}{Point} from, \hyperlink{classPoint}{Point} to, float t=1.0f)}
+\label{classLine_acc13c9d43658fbaa9dd10e609812e257}
+
+\begin{DoxyCompactList}\small\item\em Constructor -\/ Takes two \hyperlink{classPoint}{Point} objects from and to. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{
+\hyperlink{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{Line} ()}
+\label{classLine_acc11b8a429d8cdd63ba6803dff5602b3}
+
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_aabe85f48d22d92b62257091f48174fac}{
+\hyperlink{classLine_aabe85f48d22d92b62257091f48174fac}{$\sim$Line} ()}
+\label{classLine_aabe85f48d22d92b62257091f48174fac}
+
+\begin{DoxyCompactList}\small\item\em and destructor. Phew! \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_a9bc53a1abc2fbc62a086c8f779e2728c}{
+\hyperlink{classLine_a9bc53a1abc2fbc62a086c8f779e2728c}{Line} (\hyperlink{classPoint}{Point} from, \hyperlink{classPoint}{Point} to, \hyperlink{classColor}{Color} c, float t=1.0f)}
+\label{classLine_a9bc53a1abc2fbc62a086c8f779e2728c}
+
+\begin{DoxyCompactList}\small\item\em Constructor -\/ Takes two point objects from and to, and a \hyperlink{classColor}{Color} object. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_ab65c33d2958f31c95e08e872ba5d42c0}{
+\hyperlink{classPoint}{Point} \hyperlink{classLine_ab65c33d2958f31c95e08e872ba5d42c0}{getPoint} (int index)}
+\label{classLine_ab65c33d2958f31c95e08e872ba5d42c0}
+
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classPoint}{Point} -\/ one of the from and two. Pass an int -\/ 0 for 'from' and nonzero for 'to'. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_adf48f46c29bb4b7d2d3c45f5714f6d85}{
+void \hyperlink{classLine_adf48f46c29bb4b7d2d3c45f5714f6d85}{setPoints} (\hyperlink{classPoint}{Point} p1, \hyperlink{classPoint}{Point} p2)}
+\label{classLine_adf48f46c29bb4b7d2d3c45f5714f6d85}
+
+\begin{DoxyCompactList}\small\item\em changes the start and end to some other point. Useful to avoaoid creating new line objects for no reason. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_ab6265993bf5acbc28830181c3e712f10}{
+void \hyperlink{classLine_ab6265993bf5acbc28830181c3e712f10}{draw} ()}
+\label{classLine_ab6265993bf5acbc28830181c3e712f10}
+
+\begin{DoxyCompactList}\small\item\em Draws the line itself using \hyperlink{classOperations_a6e868999977d002ff2e5b0ef736815d8}{Operations::simple\_\-line}. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_aa91e6539c1228b247d0262cdeb82f28e}{
+void \hyperlink{classLine_aa91e6539c1228b247d0262cdeb82f28e}{setThickness} (float th)}
+\label{classLine_aa91e6539c1228b247d0262cdeb82f28e}
+
+\begin{DoxyCompactList}\small\item\em sets the thickness of the line -\/ not working \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_addd6839231525337be4f715021bb362d}{
+void \hyperlink{classLine_addd6839231525337be4f715021bb362d}{incThickness} (float th)}
+\label{classLine_addd6839231525337be4f715021bb362d}
+
+\begin{DoxyCompactList}\small\item\em increases thickness -\/ not working \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_a656c3f553cecfd1247488cda3da55532}{
+void \hyperlink{classLine_a656c3f553cecfd1247488cda3da55532}{decThickness} (float th)}
+\label{classLine_a656c3f553cecfd1247488cda3da55532}
+
+\begin{DoxyCompactList}\small\item\em decreases thickness -\/ not working \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLine_ab25ae45978586dbe4c329e917bbfdf1b}{
+\hyperlink{classPoint}{Point} \hyperlink{classLine_ab25ae45978586dbe4c329e917bbfdf1b}{a}}
+\label{classLine_ab25ae45978586dbe4c329e917bbfdf1b}
+
+\begin{DoxyCompactList}\small\item\em begin point. Can be any point, because the draw function works for +/-\/ slopes. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_aea716819f6f2713e6ef5e3b62290bb52}{
+\hyperlink{classPoint}{Point} \hyperlink{classLine_aea716819f6f2713e6ef5e3b62290bb52}{b}}
+\label{classLine_aea716819f6f2713e6ef5e3b62290bb52}
+
+\begin{DoxyCompactList}\small\item\em end point. :P \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_ab43d551232869437084b5905b7a53798}{
+\hyperlink{classColor}{Color} \hyperlink{classLine_ab43d551232869437084b5905b7a53798}{color}}
+\label{classLine_ab43d551232869437084b5905b7a53798}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classColor}{Color} of the line. Need to set this because the drawing function explicitly sets the color. If part of the rectangle or somethnig, have to set this color, otherwise this DEFAULTS TO BLACK. \item\end{DoxyCompactList}\item 
+\hypertarget{classLine_a97d2192cc259a0513d60b5d170d75788}{
+float \hyperlink{classLine_a97d2192cc259a0513d60b5d170d75788}{thickness}}
+\label{classLine_a97d2192cc259a0513d60b5d170d75788}
+
+\begin{DoxyCompactList}\small\item\em Thickness. Mother of God, this is not working! \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classLine}{Line} class: Implements all the functionalities required for a line. Various types of constructors, own color, etc 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classes_8h}{classes.h}\end{DoxyCompactItemize}

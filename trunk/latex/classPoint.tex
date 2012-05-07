@@ -1,0 +1,97 @@
+\hypertarget{classPoint}{
+\section{Point Class Reference}
+\label{classPoint}\index{Point@{Point}}
+}
+
+
+{\ttfamily \#include $<$classes.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPoint_ac993bda2df6e53c85a628d21be740d80}{
+float $\ast$ \hyperlink{classPoint_ac993bda2df6e53c85a628d21be740d80}{getCoords} ()}
+\label{classPoint_ac993bda2df6e53c85a628d21be740d80}
+
+\begin{DoxyCompactList}\small\item\em returns the 3 element float array which contains x, y, z coordinate of the \hyperlink{classPoint}{Point} \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_abcfe0f37e59c9a90e0c8997ebd0cd788}{
+void \hyperlink{classPoint_abcfe0f37e59c9a90e0c8997ebd0cd788}{setCoords} (float x, float y, float z)}
+\label{classPoint_abcfe0f37e59c9a90e0c8997ebd0cd788}
+
+\begin{DoxyCompactList}\small\item\em call it with three arguments to set the coordinates of a point. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_a0b3b779a6a55d26f44d51cf5cbb4a571}{
+void {\bfseries setThickness} (float x)}
+\label{classPoint_a0b3b779a6a55d26f44d51cf5cbb4a571}
+
+\item 
+\hypertarget{classPoint_a05b275095eb888843c4238589f015941}{
+void \hyperlink{classPoint_a05b275095eb888843c4238589f015941}{setCoords} (float x, float y)}
+\label{classPoint_a05b275095eb888843c4238589f015941}
+
+\begin{DoxyCompactList}\small\item\em call it with two arguments to set the coordinates of a point. Added due to demand \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_ad92f2337b839a94ce97dcdb439b4325a}{
+\hyperlink{classPoint_ad92f2337b839a94ce97dcdb439b4325a}{Point} ()}
+\label{classPoint_ad92f2337b839a94ce97dcdb439b4325a}
+
+\begin{DoxyCompactList}\small\item\em General constructors and destructors, empty. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_a405838cb39b8fb6119633d9ba7e6b4fb}{
+\hyperlink{classPoint_a405838cb39b8fb6119633d9ba7e6b4fb}{Point} (float x, float y, float z)}
+\label{classPoint_a405838cb39b8fb6119633d9ba7e6b4fb}
+
+\begin{DoxyCompactList}\small\item\em Constructor with only coordinates, \hyperlink{classColor}{Color} defaults to white. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_a30bc8409287de4f43e160664be834636}{
+\hyperlink{classPoint_a30bc8409287de4f43e160664be834636}{Point} (float x, float y)}
+\label{classPoint_a30bc8409287de4f43e160664be834636}
+
+\begin{DoxyCompactList}\small\item\em Constructor with only 2 coordinates and no color, z and color default to 0 and white respectively. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_a523ef8bde3aff206ba69af38ac8f7ae1}{
+\hyperlink{classPoint_a523ef8bde3aff206ba69af38ac8f7ae1}{Point} (float x, float y, float z, \hyperlink{classColor}{Color} c)}
+\label{classPoint_a523ef8bde3aff206ba69af38ac8f7ae1}
+
+\begin{DoxyCompactList}\small\item\em Constructor with 3 Coordinates and \hyperlink{classColor}{Color}. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_ae412fd7e0ed49ef9eaf50af195fc5b0d}{
+\hyperlink{classPoint_ae412fd7e0ed49ef9eaf50af195fc5b0d}{Point} (float x, float y, \hyperlink{classColor}{Color} c)}
+\label{classPoint_ae412fd7e0ed49ef9eaf50af195fc5b0d}
+
+\begin{DoxyCompactList}\small\item\em Construcotor with 2 coordinates and a color. z defaults to 0 again. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_a59a92024c795154f9c6928862f368e6a}{
+void \hyperlink{classPoint_a59a92024c795154f9c6928862f368e6a}{draw} ()}
+\label{classPoint_a59a92024c795154f9c6928862f368e6a}
+
+\begin{DoxyCompactList}\small\item\em Draws the \hyperlink{classPoint}{Point} using glVertex3f. No glBegin(GL\_\-POINTS) or glEnd() here. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_a062852166797c5e5c62e0ce9a32f4057}{
+void \hyperlink{classPoint_a062852166797c5e5c62e0ce9a32f4057}{scale} (float x\_\-factor, float y\_\-factor)}
+\label{classPoint_a062852166797c5e5c62e0ce9a32f4057}
+
+\begin{DoxyCompactList}\small\item\em multiply the point's x, y coordinates by a particular scale. Helpful in Graph, i think. Takes two arguments, x\_\-scale, y\_\-scale. Remember, multiplies. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_ade07f02f5a66f90324202435b897dc63}{
+void \hyperlink{classPoint_ade07f02f5a66f90324202435b897dc63}{scale} (float x\_\-factor, float y\_\-factor, float z\_\-factor)}
+\label{classPoint_ade07f02f5a66f90324202435b897dc63}
+
+\begin{DoxyCompactList}\small\item\em multiply the point's x, y, z coordinates by a particular scale. Helpful in Graph, i think. Takes three arguments, x\_\-scale, y\_\-scale, z\_\-scale. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPoint_a13d4c02fe9e260ca3b9f46ff5be9ee3b}{
+float \hyperlink{classPoint_a13d4c02fe9e260ca3b9f46ff5be9ee3b}{coords} \mbox{[}3\mbox{]}}
+\label{classPoint_a13d4c02fe9e260ca3b9f46ff5be9ee3b}
+
+\begin{DoxyCompactList}\small\item\em stores the x, y, z Coordinates of the points \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_ae420250ca4ff8cc21e18b09ed64bc2fd}{
+float \hyperlink{classPoint_ae420250ca4ff8cc21e18b09ed64bc2fd}{thickness}}
+\label{classPoint_ae420250ca4ff8cc21e18b09ed64bc2fd}
+
+\begin{DoxyCompactList}\small\item\em The Thickness of the point. \item\end{DoxyCompactList}\item 
+\hypertarget{classPoint_acab939461b8419912a164f70467b126f}{
+\hyperlink{classColor}{Color} \hyperlink{classPoint_acab939461b8419912a164f70467b126f}{color}}
+\label{classPoint_acab939461b8419912a164f70467b126f}
+
+\begin{DoxyCompactList}\small\item\em stores the color of the point, rarely required, will probably remove in future. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+! Stores the 3 dimensional coordinates and the color of the particular point. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classes_8h}{classes.h}\end{DoxyCompactItemize}

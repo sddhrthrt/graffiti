@@ -1,0 +1,58 @@
+\hypertarget{classes_8h}{
+\section{classes.h File Reference}
+\label{classes_8h}\index{classes.h@{classes.h}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarea}{area}
+\item 
+class \hyperlink{classColor}{Color}
+\item 
+class \hyperlink{classPoint}{Point}
+\item 
+class \hyperlink{classOperations}{Operations}
+\item 
+class \hyperlink{classLine}{Line}
+\item 
+class \hyperlink{classFillLine}{FillLine}
+\item 
+class \hyperlink{classRectangle}{Rectangle}
+\item 
+class \hyperlink{classCircle}{Circle}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classes_8h_aba4c6e70b571ffd4b4c74248207f0183}{
+typedef struct \hyperlink{structarea}{area} {\bfseries Area}}
+\label{classes_8h_aba4c6e70b571ffd4b4c74248207f0183}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classes_8h_a7e36eba73e6f939023f182e0e8930089}{
+vector$<$ \hyperlink{structarea}{Area} $>$ {\bfseries areas}}
+\label{classes_8h_a7e36eba73e6f939023f182e0e8930089}
+
+\item 
+\hypertarget{classes_8h_a71bbacd848c0e832f53b82e1f545f391}{
+\hyperlink{classColor}{Color} \hyperlink{classes_8h_a71bbacd848c0e832f53b82e1f545f391}{pallete} \mbox{[}6\mbox{]}}
+\label{classes_8h_a71bbacd848c0e832f53b82e1f545f391}
+
+\begin{DoxyCompactList}\small\item\em A universal color pallete. Any other place, you can use it by just calling pallete\mbox{[}x\mbox{]}, where 1$<$x$<$5. The colors are set in \hyperlink{classOperations_ab839b731a3e50163ada788ac94f91a75}{Operations::setPallete()}, And this function has to be customised to take a 2 dimensional array of float values and set them as the current pallete. Expecting color scheming work from Shrimai. \item\end{DoxyCompactList}\item 
+\hypertarget{classes_8h_a1fbdf6fb8a434012ef6e26b44863b858}{
+\hyperlink{classColor}{Color} {\bfseries uicolors} \mbox{[}6\mbox{]}}
+\label{classes_8h_a1fbdf6fb8a434012ef6e26b44863b858}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Has definitions of all the classes that are used in the code. The classes currently implemented are: \hyperlink{classColor}{Color}, \hyperlink{classPoint}{Point}, \hyperlink{classLine}{Line}, Quadrangle. \begin{DoxyAuthor}{Author}
+Akhil, Anantha, Chandrakanth, Shrimai, Siddhartha 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar22, 2012 
+\end{DoxyDate}
